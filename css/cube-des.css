@@ -1,7 +1,7 @@
-.container {
+.container-des {
     perspective: 1000px;
     perspective-origin: 50% 50%;
-    font-family: "fontawesome";
+    font-family: 'lato',sans-serif;;
     height: 100vh;
 }
 
