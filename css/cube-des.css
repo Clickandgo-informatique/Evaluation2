@@ -1,14 +1,13 @@
 .container-des {
     perspective: 1000px;
     perspective-origin: 50% 50%;
-    font-family: 'lato',sans-serif;;
-    height: 100vh;
+    font-family: 'lato',sans-serif;
+    height: 200%;    
 }
-
 .container .cube {
     position: relative;
-    left: 40%;
-    top: 60%;
+    left: 25%;
+    top: 25%;
     height: 200px;
     width: 200px;
     transform-style: preserve-3d;
@@ -23,48 +22,48 @@
     padding: 10px;
     height: 100%;
     width: 100%;
-    border: 2px solid darkgray;
+    border: 1px solid darkgray;
     color: black;
 }
 
 .container .cube .front {
     background: white;
     transform: translateZ(100px);
-    border-radius: 25px; 
+    border-radius: 15px; 
 }
 
 .container .cube .back {
     background: white;
     transform: translateZ(-100px)rotate(180deg);
-    border-radius: 25px; 
+    border-radius: 15px; 
 }
 
 .container .cube .right {
     background: white;
     transform-origin: top right;
     transform: rotateY(-270deg) translateX(100px);
-    border-radius: 25px; 
+    border-radius: 15px; 
 }
 
 .container .cube .left {
     background: white;
     transform-origin: center left;
     transform: rotateY(270deg) translateX(-100px);
-    border-radius: 25px; 
+    border-radius: 15px; 
 }
 
 .container .cube .top {
     background: white;
     transform-origin: top center;
     transform: rotateX(-270deg) translateY(-100px);
-    border-radius: 25px; 
+    border-radius: 15px; 
 }
 
 .container .cube .bottom {
     background: white;
     transform-origin: bottom center;
     transform: rotateX(270deg) translateY(100px);
-    border-radius: 25px; 
+    border-radius: 15px; 
 }
 
 .container .cube div span {
@@ -95,7 +94,7 @@
 .container .cube .top span:nth-child(2),
 .container .cube .left span:nth-child(3),
 .container .cube .right span:nth-child(3),
-.container .cube .bottom span:nth-child(3) {
+.container .cube .bottom span:nth-child(2) {
     position: absolute;
     bottom: 35px;
     right: 35px;
@@ -133,16 +132,24 @@
     right: 26px;
 }
 
-/* @keyframes rotate {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+@keyframes animate {
+    25% {
+      transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
+      top: 0%;
     }
-
+  
     50% {
-        transform: rotateX(126deg) rotateY(127deg) rotateZ(245deg);
+      transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
+      top: 30%;
     }
-
+  
+    75% {
+      transform: rotateX(276deg) rotateY(256deg) rotateZ(246deg);
+      top: 45%;
+    }
+  
     100% {
-        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
+      top: 60%;
     }
-} */
+  }
