@@ -2,6 +2,20 @@ body{
     background-color: black;
     font-family: 'lato',sans-serif;
 }
+.historique{
+    display:block;
+    overflow-y:scroll;
+    padding: 10px;
+    max-height:100px;   
+}
+.historique p{
+    font-size: 0.7rem;
+    font-style: italic;
+    color: cornflowerblue;
+    margin: 1px;
+    padding: 1px;
+    /* text-align: left; */
+}
 
 .pointsJ1,
 .pointsJ2 {
@@ -17,11 +31,11 @@ body{
 .tapis-jeu{
     background-color: rgb(0, 86, 0);
     border-radius: 10px;
-    width:300px;
+    width:200px;
     box-shadow: 4px 4px 4px 4px darkolivegreen;
     border: 1px solid darkgreen;    
-    transition: 1s ease-in-out;
-    height: 500px;
+    transition: 2s ease-in-out;
+    /* height: 600px; */
 }
 .selection {
     border: 5px solid gray;
