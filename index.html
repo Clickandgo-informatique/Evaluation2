@@ -18,35 +18,46 @@
 </head>
 
 <body>
-    <!-- Barre navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light mx-5 py-4">
-        <div class="container">
-            <h2>Jeu de dés à deux joueurs</h2>
-            <button class="btn btn-success"id="btn-new-game">Nouvelle partie</button>
+    <div class="row">
+        <!-- Barre navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-warning mx-5 py-4">
+            <div class="container">
+                <h2>Jeu de dés à deux joueurs</h2>
+                <button class="btn btn-success" id="btn-new-game">Nouvelle partie</button>
+            </div>
+        </nav>
+    </div>
+    <!-- Barre informative -->
+    <div class="row p-1 text-center">
+        <div class="col-md-12">
+            <div id="barreInfo"></div>
         </div>
-    </nav>
+    </div>
 
-    <div id="barreInfo"></div>
+    <!-- Tapis de jeu -->
 
-    <div class="container-fluid">
-        <div class="row">
-
+    <div class="row p-2 text-center">
+        <div class="container tapis-jeu p-5 d-flex justify-content-center align-items-center">
             <!-- Joueur 1 -->
-            <div class="col-sm-4" id="col-joueur1">
-                <h5>Joueur 1</h5>
-                <div id="score-total-joueur1">
-                    <h4>0</h4>
+            <div class="col-md-4 p-2 d-flex justify-content-center" id="joueur1">
+                <div class="pointsJ1">
+                    <h5>Joueur 1</h5>
+                    <div id="score-total-joueur1">
+                        <h4>0</h4>
+                    </div>
+                    <div id="score-courant-joueur1">
+                        <h4>0</h4>
+                    </div>
+                    <h5>Points</h5>
                 </div>
-                <div id="score-courant-joueur1">
-                    <h4>0</h4>
-                </div>
-                <h3>Points</h3>
             </div>
 
             <!-- Cube-3d représentant le dé -->
-            <div class="col-sm-4">
+
+            <div class="col-md-4">
                 <div class="container container-des">
                     <div class="cube" id="cube">
+
                         <div class="front">
                             <span class="fas fa-circle"></span>
                         </div>
@@ -63,11 +74,13 @@
                             <span class="fas fa-circle"></span>
                             <span class="fas fa-circle"></span>
                         </div>
+
                         <div class="left">
                             <span class="fas fa-circle"></span>
                             <span class="fas fa-circle"></span>
                             <span class="fas fa-circle"></span>
                         </div>
+
                         <div class="right">
                             <span class="fas fa-circle"></span>
                             <span class="fas fa-circle"></span>
@@ -75,6 +88,7 @@
                             <span class="fas fa-circle"></span>
                             <span class="fas fa-circle"></span>
                         </div>
+
                         <div class="bottom">
                             <span class="fas fa-circle"></span>
                             <span class="fas fa-circle"></span>
@@ -86,25 +100,31 @@
             </div>
 
             <!-- Joueur 2 -->
-            <div class="col-sm-4" id="col-joueur2">
-                <h5>Joueur 2</h5>
-                <div id="score-total-joueur2">
-                    <h4>0</h4>
+            <div class="col-md-4 d-flex justify-content-center" id="joueur2">
+                <div class="pointsJ2">
+                    <h5>Joueur 2</h5>
+                    <div id="score-total-joueur2">
+                        <h4>0</h4>
+                    </div>
+                    <div id="score-courant-joueur2">
+                        <h4>0</h4>
+                    </div>
+                    <h3>Points</h3>
                 </div>
-                <div id="score-courant-joueur2">
-                    <h4>0</h4>
-                </div>
-                <h3>Points</h3>
             </div>
         </div>
-    
-    <div class="row pt-4 justify-items-center">
-        <div class="container">
-            <button class="btn btn-primary" id="btn-hold">Ajouter</button>
-            <button class="btn btn-warning" id="btn-roll">Lancer le dès</button>
+    </div>
+
+    <!-- Container boutons -->
+    <div class="row p-4 text-center">
+        <div class="container ">
+            <div class="col">
+                <button class="btn btn-primary" id="btn-hold">Ajouter au score global</button>
+                <button class="btn btn-warning" id="btn-roll">Lancer le dès</button>
+            </div>
         </div>
     </div>
-</div>
+
 </body>
 <script type="module" src="js/main.js"></script>
 

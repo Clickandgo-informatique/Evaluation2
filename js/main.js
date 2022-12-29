@@ -12,6 +12,13 @@ const divScoreTotalJ1 = document.querySelector('#score-total-joueur1 h4')
 const divScoreCourantJ2 = document.querySelector('#score-courant-joueur2 h4')
 const divScoreTotalJ2 = document.querySelector('#score-total-joueur2 h4')
 
+//Au démarrage de la page
+window.onload=()=>{
+    barreInfo.innerHTML=`<h4>Appuyer sur le bouton "nouvelle partie" pour commencer</h4>`
+    btnHold.disabled=true
+    btnRoll.disabled=true
+}
+
 //historique de la partie
 const historique = []
 
@@ -87,6 +94,7 @@ const remplirScoreCourant = () => {
             historique.push([`Le joueur ${joueurActif} a tiré un 1 : il doit passer son tour, score total = ${scoreTotalJ1} points.`])
             divScoreCourantJ1.textContent = 0
             joueurActif = 2
+            btnHold.disabled=true
             console.log(historique)
 
         } else {
@@ -98,6 +106,7 @@ const remplirScoreCourant = () => {
             //constitution de l'historique de la partie
             historique.push([`Le joueur ${joueurActif} tire un ${resultatTirage} score courant = ${scoreCourantJ1}/100 score total = ${scoreTotalJ1} points.`])
             console.log(historique)
+            btnHold.disabled=false
         }
 
     } else {
@@ -109,6 +118,7 @@ const remplirScoreCourant = () => {
             historique.push([`Le joueur ${joueurActif} a tiré un 1 : il doit passer son tour, score total = ${scoreTotalJ2} points.`])
             divScoreCourantJ2.textContent = 0
             joueurActif = 1
+            btnHold.disabled=true
             console.log(historique)
 
         } else {
@@ -120,6 +130,7 @@ const remplirScoreCourant = () => {
             //constitution de l'historique de la partie
             historique.push([`Le joueur ${joueurActif} tire un ${resultatTirage}, score courant = ${scoreCourantJ2}/100 score total = ${scoreTotalJ2} points.`])
             console.log(historique)
+            btnHold.disabled=false
         }
     }
 }
@@ -146,6 +157,8 @@ btnNewGame.addEventListener('click', () => {
     divScoreTotalJ1.textContent = 0
     divScoreCourantJ2.textContent = 0
     divScoreTotalJ2.textContent = 0
+
+    btnRoll.disabled=false
 })
 
 //Lancement du dé
@@ -158,7 +171,7 @@ btnRoll.addEventListener('click', () => {
 //Calcul du total temporaire pour chaque joueur et addition au score global
 btnHold.addEventListener('click', () => {
 
-    btnHold.disabled = true
+    // btnHold.disabled = true
     
     if (joueurActif == 1) {
         scoreTotalJ1 += scoreCourantJ1
