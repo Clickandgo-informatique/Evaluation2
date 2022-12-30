@@ -7,12 +7,12 @@ const btnHold = document.getElementById('btn-hold')
 const btnNewGame = document.getElementById('btn-new-game')
 const joueur1 = document.getElementById('joueur1')
 const joueur2 = document.getElementById('joueur2')
-const divScoreCourantJ1 = document.querySelector('#score-courant-joueur1 h4')
-const divScoreTotalJ1 = document.querySelector('#score-total-joueur1 h4')
-const divScoreCourantJ2 = document.querySelector('#score-courant-joueur2 h4')
-const divScoreTotalJ2 = document.querySelector('#score-total-joueur2 h4')
-const divHistorique = document.querySelector('#historique')
-const checkHistorique = document.querySelector('#checkHistorique')
+const divScoreCourantJ1 = document.querySelector('.score-courant-joueur1')
+const divScoreTotalJ1 = document.querySelector('.score-total-joueur1')
+const divScoreCourantJ2 = document.querySelector('.score-courant-joueur2')
+const divScoreTotalJ2 = document.querySelector('.score-total-joueur2')
+const divHistorique = document.querySelector('.historique')
+const checkHistorique = document.querySelector('.checkHistorique')
 
 //Au démarrage de la page
 window.onload = () => {

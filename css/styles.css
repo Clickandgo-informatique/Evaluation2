@@ -1,9 +1,11 @@
+@import "/css/styles-cube-3d.css";
+@import "/css/media-queries.css";
+
 body{
-    background-color: black;
+    background-color: rgb(220, 220, 220);
     font-family: 'lato',sans-serif;
 }
-.historique{
-    display:block;
+.historique{    
     overflow-y:scroll;
     padding: 10px;
     max-height:100px;   
@@ -14,7 +16,7 @@ body{
     color: cornflowerblue;
     margin: 1px;
     padding: 1px;
-    /* text-align: left; */
+    text-align: left; 
 }
 
 .pointsJ1,
@@ -30,23 +32,26 @@ body{
 
 .tapis-jeu{
     background-color: rgb(0, 86, 0);
-    border-radius: 10px;
-    width:200px;
-    box-shadow: 4px 4px 4px 4px darkolivegreen;
-    border: 1px solid darkgreen;    
-    transition: 2s ease-in-out;
-    /* height: 600px; */
+    border-radius: 10px;    
+    box-shadow: 4px 4px 4px 4px rgb(74, 74, 74);
+    border: 1px solid darkolivegreen;    
+    transition: 1s linear ease-in-out;
+    height: 60vh;    
 }
 .selection {
     border: 5px solid gray;
     color: red;
 }
 
-#score-total-joueur1,
-#score-total-joueur2 {
-    font-size: 16px;
-    color: red;
+.score-total{
+    font-size: 30px;
+    color: white;
     font-weight: bold;
+}
+.score-courant{
+    font-size: 25px;
+    color: darkgray;
+    font-weight: bold; 
 }
 
 .barreInfo {
@@ -54,22 +59,4 @@ body{
     color: black;
     font-size: 15px;
     overflow-x: scroll;
-}
-
-@media screen and (max-width:768px) {
-    .container-des {
-        transform: scale(40%);
-    }
-}
-
-@media screen and (max-width:1980px) {
-    .container-des {
-        transform: scale(55%);
-    }
-}
-
-@media screen and (max-width:1024px) {
-    .container-des {
-        transform: scale(45%);
-    }
 }

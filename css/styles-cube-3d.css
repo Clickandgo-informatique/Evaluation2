@@ -1,8 +1,10 @@
-container-des {
+@import "/css/animation-cube-3d.css";
+
+.container-cube-3d {
     perspective: 1000px;
     perspective-origin: 50% 50%;    
     height:100vh;          
-}
+} 
 .container .cube {
     position: relative;
     left: 25%;
@@ -130,24 +132,3 @@ container-des {
     right: 26px;
 }
 
-@keyframes animate {
-    25% {
-      transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
-      top: 0%;
-    }
-  
-    50% {
-      transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
-      top: 10%;
-    }
-  
-    75% {
-      transform: rotateX(276deg) rotateY(256deg) rotateZ(246deg);
-      top: 20%;
-    }
-  
-    100% {
-      transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
-      top: 30%;
-    }
-  }
