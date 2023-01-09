@@ -27,7 +27,7 @@
                 <h2>Jeu de dés à deux joueurs</h2>
                 <div><input type="checkbox" name="checkHistorique" class="checkHistorique">
                     <label for="checkHistorique">Voir historique</label></div>
-                <button class="btn btn-success" id="btn-new-game">Nouvelle partie</button>
+
             </div>
         </nav>
     </div>
@@ -40,7 +40,7 @@
 
     <!-- Tapis de jeu -->
     <div class="container">
-    <div class="row p-2 text-center">
+        <div class="row p-2 text-center">
             <div class="col-md-11 mx-auto tapis-jeu d-flex justify-content-center align-items-center">
 
                 <!-- Joueur 1 -->
@@ -111,11 +111,12 @@
         </div>
     </div><!-- Fin tapis de jeu -->
     <!-- Container boutons -->
-    <div class="row p-4 text-center">
-        <div class="container">
-            <div class="col-md-11 mx-auto">
-                <button class="btn btn-primary" id="btn-hold">Ajouter au score global</button>
-                <button class="btn btn-warning" id="btn-roll">Lancer le dès</button>
+    <div class="row p-2">
+        <div class="container-fluid">
+            <div class="col-md-11">
+                <button type="button" class="btn btn-primary" id="btn-hold">Ajouter au score global</button>
+                <button type="button" class="btn btn-warning" id="btn-roll">Lancer le dé</button>
+                <button type="button" class="btn btn-success" id="btn-new-game">Nouvelle partie</button>
             </div>
         </div>
     </div>
@@ -129,6 +130,6 @@
         </div>
     </div>
 </body>
-<script type="module" src="js/main.js"></script>
+<script type="module" defer src="js/main.js"></script>
 
 </html>
