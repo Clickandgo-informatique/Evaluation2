@@ -1,25 +1,37 @@
 @import "/css/styles-cube-3d.css";
 @import "/css/media-queries.css";
+@import "/css/animations.css";
 
-body{
+body {
     background-color: rgb(220, 220, 220);
-    font-family: 'lato',sans-serif;
+    font-family: 'lato', sans-serif;
 }
-.historique{    
-    overflow-y:scroll;
+
+.joueurActif {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 0;
+    width: auto;
+    border-radius: 5px;
+}
+
+.historique {
+    overflow-y: scroll;
     padding: 10px;
-    max-height:100px;   
+    max-height: 100px;
 }
-.historique p{
+
+.historique p {
     font-size: 0.7rem;
     font-style: italic;
-    color: cornflowerblue;
+    color: blue;
     margin: 1px;
     padding: 1px;
-    text-align: left; 
+    text-align: left;
 }
 
-.pointsJ1,
+/* .pointsJ1,
 .pointsJ2 {
     border: 1px solid lightgray;
     width: fit-content;
@@ -28,30 +40,47 @@ body{
     box-shadow: 2px 2px 2px 2px darkolivegreen;
     border: 1px solid darkgreen;
     border-radius: 10px;
+} */
+.joueur1,
+.joueur2 {
+    color: darkgray;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.tapis-jeu{
+.tapis-jeu {
     background-color: rgb(0, 86, 0);
-    border-radius: 10px;    
+    border-radius: 10px;
     box-shadow: 4px 4px 4px 4px rgb(74, 74, 74);
-    border: 1px solid darkolivegreen;    
+    border: 1px solid darkolivegreen;
     transition: 1s linear ease-in-out;
-    height: 60vh;    
+    height: 50%;
+    max-width: 50%;
 }
+
 .selection {
     border: 5px solid gray;
     color: red;
 }
+.joueur1,.joueur2{
+    background-color: green; 
+    border-radius: 5px;   
+}
 
-.score-total{
+.score-total {
     font-size: 30px;
     color: white;
     font-weight: bold;
+    background-color: rgb(131, 128, 128);
+    border-radius: 5px;
 }
-.score-courant{
-    font-size: 25px;
+
+.score-courant {
+    font-size: 30px;
     color: darkgray;
-    font-weight: bold; 
+    font-weight: bold;
+    background-color: pink;
+    border-radius: 5px;
 }
 
 .barreInfo {

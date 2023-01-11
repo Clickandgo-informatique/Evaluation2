@@ -1,19 +1,20 @@
 @import "/css/animation-cube-3d.css";
 
 .container-cube-3d {
-    perspective: 1000px;
-    perspective-origin: 50% 50%;    
-    height:100vh;          
-} 
+    perspective:100px;
+    perspective-origin: 50% 50%;
+    height: 50vh;     
+}
+
 .container .cube {
     position: relative;
-    left: 25%;
+    left: 20%;
     top: 25%;
     height: 200px;
     width: 200px;
     transform-style: preserve-3d;
     cursor: pointer;    
-    transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);    
+    transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
 }
 
 .container .cube div {
@@ -22,52 +23,52 @@
     padding: 10px;
     height: 100%;
     width: 100%;
-    border: 2px solid darkgray;
-    color: black;
+    border: 3px solid darkgray;
+    /* color: black; */
 }
 
 .container .cube .front {
     background: white;
     transform: translateZ(100px);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .container .cube .back {
     background: white;
     transform: translateZ(-100px)rotate(180deg);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .container .cube .right {
     background: white;
     transform-origin: top right;
     transform: rotateY(-270deg) translateX(100px);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .container .cube .left {
     background: white;
     transform-origin: center left;
     transform: rotateY(270deg) translateX(-100px);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .container .cube .top {
     background: white;
     transform-origin: top center;
     transform: rotateX(-270deg) translateY(-100px);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .container .cube .bottom {
     background: white;
     transform-origin: bottom center;
     transform: rotateX(270deg) translateY(100px);
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .container .cube div span {
-    font-size: 32px;
+    font-size: 30px;
     font-family: 'fontawesome';
 }
 
@@ -123,12 +124,11 @@
 .container .cube .back .firstPre {
     position: absolute;
     top: 45px;
-    left: 26px;
+    left: 25px;
 }
 
 .container .cube .back .secondPre {
     position: absolute;
     bottom: 45px;
-    right: 26px;
+    right: 25px;
 }
-

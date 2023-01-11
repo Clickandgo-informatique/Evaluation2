@@ -1,4 +1,6 @@
 import Joueur from "./classes/Joueur.js";
+import JoueurActif from "./classes/JoueurActif.js";
+
 import { tirage } from "./functions/tirages.js";
 import {
   angleArray,
@@ -11,6 +13,7 @@ import {
   divScoreCourantJ2,
   divScoreTotalJ1,
   divScoreTotalJ2,
+  divJoueurActif,
 } from "./constants.js";
 import {
   calculScoresTotaux,
@@ -18,14 +21,13 @@ import {
   currentJ1,
   currentJ2,
   historique,
-  remplirScoreCourant
+  remplirScoreCourant,
 } from "./functions/calculScores.js";
-
-export var joueurActif;
 
 //Initialisation des variables des 2 joueurs
 export const j1 = new Joueur(1, 0, 0);
 export const j2 = new Joueur(2, 0, 0);
+export var joueurActif = new JoueurActif();
 
 //Au démarrage de la page
 window.onload = () => {
@@ -37,8 +39,9 @@ window.onload = () => {
 
 //Détermine qui est le premier joueur par aléatoire
 function premierJoueur() {
-  joueurActif = Math.floor(Math.random() * 2) + 1;
-  barreInfo.innerHTML = `<h4>Le joueur ${joueurActif} commence la partie</h4>`;
+  joueurActif.setNumJoueur(Math.floor(Math.random() * 2) + 1);
+  barreInfo.innerHTML = `<h4>Le joueur ${joueurActif.getNumJoueur()} commence la partie</h4>`;
+  divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
   return joueurActif;
 }
 const initialiser = () => {
@@ -53,13 +56,16 @@ const initialiser = () => {
   divScoreTotalJ1.textContent = 0;
   divScoreCourantJ2.textContent = 0;
   divScoreTotalJ2.textContent = 0;
+
+  afficherHistorique();
 };
 
 btnNewGame.addEventListener("click", () => {
   //Nouvelle partie
   initialiser();
   btnRoll.classList.remove("disabled");
-  console.log("Joueur actif depuis btnNewGame = " + joueurActif);
+  divJoueurActif.classList.add("animationColor");
+  // divJoueurActif.classList.remove("animationScale");
 });
 
 //Lancement du dé
@@ -67,7 +73,7 @@ btnRoll.addEventListener("click", () => {
   btnHold.classList.remove("disabled");
   tirage();
   remplirScoreCourant(joueurActif);
-  console.log("Joueur actif depuis bouton btnRoll = " + joueurActif);
+
   //Si l'option est sélectionnée l'historique de
   // la partie est affiché
   if (checkHistorique.checked === true) {
@@ -77,3 +83,13 @@ btnRoll.addEventListener("click", () => {
     divHistorique.style.display = "none";
   }
 });
+
+//Ajouter score courant au global du joueur actif
+btnHold.addEventListener("click", () => {
+  calculScoresTotaux(joueurActif);
+  afficherHistorique();
+});
+
+divJoueurActif.addEventListener('animationend',()=>{
+  divJoueurActif.classList.remove("animationColor")
+})
