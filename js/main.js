@@ -14,6 +14,8 @@ import {
   divScoreTotalJ1,
   divScoreTotalJ2,
   divJoueurActif,
+  joueur1,
+  joueur2
 } from "./constants.js";
 import {
   calculScoresTotaux,
@@ -57,6 +59,7 @@ const initialiser = () => {
   divScoreCourantJ2.textContent = 0;
   divScoreTotalJ2.textContent = 0;
 
+  emphase();
   afficherHistorique();
 };
 
@@ -72,7 +75,9 @@ btnNewGame.addEventListener("click", () => {
 btnRoll.addEventListener("click", () => {
   btnHold.classList.remove("disabled");
   tirage();
-  remplirScoreCourant(joueurActif);
+  setTimeout(()=>{
+    remplirScoreCourant(joueurActif);
+  },1400)
 
   //Si l'option est sélectionnée l'historique de
   // la partie est affiché
@@ -93,3 +98,20 @@ btnHold.addEventListener("click", () => {
 divJoueurActif.addEventListener('animationend',()=>{
   divJoueurActif.classList.remove("animationColor")
 })
+
+//Emphase visuelle sur les scores pour signaler le joueur actif
+export const emphase=()=>{
+
+if(joueurActif.getNumJoueur()===1){
+ joueur1.classList.add('selection')
+ joueur1.classList.remove('deselection')
+ joueur2.classList.add('deselection')
+ joueur2.classList.remove('selection')
+}else{
+  joueur1.classList.remove('selection')
+  joueur1.classList.add('deselection')
+  joueur2.classList.add('selection')
+  joueur2.classList.remove('deselection')
+}
+
+}

@@ -11,7 +11,7 @@ import {
   divJoueurActif,
 } from "../constants.js";
 
-import { j1, j2 } from "../main.js";
+import { j1, j2,emphase } from "../main.js";
 
 //historique de la partie
 export const historique = [];
@@ -38,7 +38,8 @@ export const remplirScoreCourant = (joueurActif) => {
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     joueurActif.setNumJoueur(2);
-    divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;    
+    divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`; 
+    emphase()   
 
     return joueurActif;
   }
@@ -54,6 +55,7 @@ export const remplirScoreCourant = (joueurActif) => {
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     joueurActif.setNumJoueur(1);
+    emphase()
     divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     divJoueurActif.classList.add("animationScale");
 
@@ -108,6 +110,7 @@ export const calculScoresTotaux = (joueurActif) => {
 
     //Changement de joueur
     joueurActif.setNumJoueur(2);
+    emphase()
     divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     return joueurActif;
   }
@@ -130,6 +133,7 @@ export const calculScoresTotaux = (joueurActif) => {
 
     //Changement de joueur
     joueurActif.setNumJoueur(1);
+    emphase()
     divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     return joueurActif;
   }

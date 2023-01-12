@@ -1,6 +1,10 @@
 /*ANIMATION */
-import { angleArray } from "../constants.js";
-import { resultatTirage } from "./tirages.js"
+import {
+  angleArray
+} from "../constants.js";
+import {
+  resultatTirage
+} from "./tirages.js"
 
 export const animerCube = () => {
   cube.style.animation = "animate 1.4s linear";
@@ -14,7 +18,7 @@ export const animerCube = () => {
     "deg)";
   cube.style.transition = "1s linear";
 
-  cube.addEventListener("animationend", function (e) {
+  cube.addEventListener("animationend", function () {
     cube.style.animation = "";
   });
 };

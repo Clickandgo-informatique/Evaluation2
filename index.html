@@ -39,123 +39,124 @@
       <div id="barreInfo"></div>
     </div>
   </div>
-
-  <!-- Tapis de jeu -->
+  <!-- Surface Bureau -->
   <div class="row p-2">
-    <div class="col-md-12 tapis-jeu mx-auto">
-      <div class="d-flex">
+    <div class="d-flex col-md-12 bureau mx-auto">
+      <!-- Scores Joueur 1 -->
+      <div class="d-flex flex-column justify-content-around col-md-2 p-3 mx-3" id="joueur1">
+        <span class="joueur1 text-Shadow text-center text-white p-3 box-Shadow">Joueur 1</span>
 
-        <!-- Scores Joueur 1 -->
-        <div class="d-flex flex-column justify-content-around col-md-3 p-2" id="joueur1">
-          <span class="joueur1 text-center text-white p-3">Joueur 1</span>
-
-          <div class="d-flex p-3 flex-column score-total">
-            <h6 class="text-white text-center">Score total</h6>
-            <h4 class="score-total-joueur1 text-white text-center my-0">0</h4>
-          </div>
-          <div class="d-flex p-3 flex-column score-courant">
-            <h6 class="text-white text-center">Score courant</h6>
-            <h4 class="text-white text-center score-courant-joueur1">0</h4>
-          </div>
+        <div class="d-flex p-3 flex-column box-Shadow score-total">
+          <h6 class="text-Shadow text-white text-center">Score total</h6>
+          <h4 class="text-Shadow score-total score-total-joueur1 text-white text-center my-0">0</h4>
         </div>
+        <div class="d-flex p-3 flex-column box-Shadow score-courant">
+          <h6 class="text-Shadow text-white text-center">Score courant</h6>
+          <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur1">0</h4>
+        </div>
+      </div>
+      <!-- Tapis de jeu -->
+      <div class="col-md-8 tapis-jeu mx-auto mt-3">
+        <div class="container">
 
+          <!-- Cube-3d représentant le dé -->
+          <div class="col-md-12">
+          <div class="container-cube-3d">
+              <div class="cube" id="cube">
+                <div class="front">
+                  <span class="fas fa-circle"></span>
+                </div>
 
-        <!-- Cube-3d représentant le dé -->
-        <div class="col-md-6 container-cube-3d">
-          <div class="container">
-            <div class="cube" id="cube">
-              <div class="front">
-                <span class="fas fa-circle"></span>
-              </div>
+                <div class="back">
+                  <pre
+                    class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>     <span class="fas fa-circle"></span></pre>
+                  <br />
+                  <pre
+                    class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+                </div>
 
-              <div class="back">
-                <pre
-                  class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>     <span class="fas fa-circle"></span></pre>
-                <br />
-                <pre
-                  class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
-              </div>
+                <div class="top">
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                </div>
 
-              <div class="top">
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-              </div>
+                <div class="left">
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                </div>
 
-              <div class="left">
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-              </div>
+                <div class="right">
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                </div>
 
-              <div class="right">
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-              </div>
-
-              <div class="bottom">
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
-                <span class="fas fa-circle"></span>
+                <div class="bottom">
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                  <span class="fas fa-circle"></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Scores Joueur 2 -->
-        <div class="d-flex flex-column justify-content-around col-md-3 p-2" id="joueur2">
-          <span class="joueur2 text-center text-white p-3">Joueur 2</span>        
-          <div class="d-flex p-3 flex-column score-total">
-            <h6 class="text-white text-center">Score total</h6>
-            <h4 class="score-total-joueur2 text-white text-center my-0">0</h4>
-          </div>
-          <div class="d-flex p-3 flex-column score-courant">
-            <h6 class="text-white text-center">Score courant</h6>
-            <h4 class="text-white text-center score-courant-joueur2">0</h4>
-          </div>
+      </div><!-- Fin tapis de jeu -->
+      
+      
+      <!-- Scores Joueur 2 -->
+      <div class="d-flex flex-column justify-content-around col-md-2 p-3 mx-3" id="joueur2">
+        <span class="joueur2 text-Shadow text-center text-white p-3 box-Shadow">Joueur 2</span>
+        <div class="d-flex p-3 flex-column box-Shadow score-total">
+          <h6 class="text-white text-Shadow text-center">Score total</h6>
+          <h4 class="score-total score-total-joueur2 text-Shadow text-white text-center my-0">0</h4>
+        </div>
+        <div class="d-flex p-3 flex-column box-Shadow score-courant">
+          <h6 class="text-white text-Shadow text-center">Score courant</h6>
+          <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur2">0</h4>
         </div>
       </div>
     </div>
     
-  </div><!-- Fin tapis de jeu -->
-
-  <!-- Container boutons -->
-  <div class="row p-2">
-    <div class="container-fluid">
-      <div class="col-md-4 mx-auto">
-        <div class="joueurActif text-center">Aucun joueur actif</div>
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="joueurActif text-Shadow text-center">Aucun joueur actif</div>
       </div>
     </div>
+    <!-- Container boutons -->
+    <div class="row p-2">
+      <div class="d-flex col-md-12 justify-content-center p-2">
+
+        <button type="button" class="btn btn-primary mx-1 box-Shadow left-icon-holder text-white" id="btn-hold">
+          <i class="fa fa-calculator text-white"></i>
+          &nbsp;Ajouter au score global
+        </button>
+
+        <button type="button" class="btn btn-warning mx-1 box-Shadow left-icon-holder text-white" id="btn-roll">
+          <i class="fa fa-dice text-white"></i>
+          &nbsp;Lancer le dé
+        </button>
+
+        <button type="button" class="btn btn-success mx-1 box-Shadow left-icon-holder text-white" id="btn-new-game">
+          <i class="fa fa-play"></i>
+          &nbsp;Nouvelle partie
+        </button>
+      </div>
+    </div>
+
+    <!-- Barre historique partie -->
     <div class="row p-1">
-      <div class="container-fluid">
-        <div class="col-md-4 mx-auto">
 
-          <button type="button" class="btn btn-primary" id="btn-hold">
-            Ajouter au score global
-          </button>
-
-          <button type="button" class="btn btn-warning" id="btn-roll">
-            Lancer le dé
-          </button>
-
-          <button type="button" class="btn btn-success" id="btn-new-game">
-            Nouvelle partie
-          </button>
-        </div>
-
-        <!-- Barre historique partie -->
-        <div class="row p-1 text-center">
-          <div class="container-fluid">
-            <div class="col-md-4 mx-auto">
-              <div class="historique"></div>
-            </div>
-          </div>
-        </div>
+      <div class="d-flex col-md-12 justify-content-center mx-auto">
+        <textarea class="historique"></textarea>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 </body>
 <script type="module" defer src="js/main.js"></script>

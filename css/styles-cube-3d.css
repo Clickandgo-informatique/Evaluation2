@@ -1,19 +1,19 @@
 @import "/css/animation-cube-3d.css";
 
 .container-cube-3d {
-    perspective:100px;
+    perspective: 1000px;
     perspective-origin: 50% 50%;
-    height: 50vh;     
+    height:auto;
+ 
 }
 
 .container .cube {
     position: relative;
-    left: 20%;
-    top: 25%;
+    left: 40%;
+    top: 50%;
     height: 200px;
     width: 200px;
-    transform-style: preserve-3d;
-    cursor: pointer;    
+    transform-style: preserve-3d;    
     transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
 }
 
