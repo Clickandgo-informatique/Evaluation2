@@ -1,22 +1,56 @@
-@media screen and (min-width:400px) {
+/*Extra-small*/
+@media screen and (min-width:0px) {
     .container-cube-3d {
-        transform: scale(25%);
+        transform: scale(32%);
+    }
+
+    .joueurActif,.barreInfo{
+        font-size:8px;
+    }
+    .score-courant,
+    .score-total,
+    .container-scores-joueur1,
+    .container-scores-joueur2 {
+        transform:scale(85%);
+        font-size: 10px;
+        margin:5px;
+    }
+    .container-scores{
+        margin:5px;
+        padding:0;
     }
 }
 
+/*Small*/
+@media screen and (min-width:576px){
+    .container-cube-3d {
+        transform: scale(37%);
+    }
+    .score-courant{
+        font-size: 10px;
+    }
+}
+/*Medium*/
 @media screen and (min-width:768px) {
     .container-cube-3d {
         transform: scale(40%);
     }
 }
-
-@media screen and (min-width:1024px) {
+/*Large*/
+@media screen and (min-width:992px) {
     .container-cube-3d {
         transform: scale(45%);
     }
 }
 
-@media screen and (min-width:1980px) {
+/* Extra large*/
+@media screen and (min-width:1200px) {
+    .container-cube-3d {
+        transform: scale(60%);
+    }
+}
+/*Extra extra-large*/
+@media screen and (min-width:1400px) {
     .container-cube-3d {
         transform: scale(60%);
     }

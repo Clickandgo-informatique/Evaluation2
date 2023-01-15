@@ -33,7 +33,7 @@ export var joueurActif = new JoueurActif();
 
 //Au démarrage de la page
 window.onload = () => {
-  barreInfo.innerHTML = `<h4>Appuyer sur le bouton "nouvelle partie" pour commencer</h4>`;
+  barreInfo.innerHTML = `Appuyer sur le bouton "Nouvelle partie" pour commencer`;
   btnHold.classList.add("disabled");
   btnRoll.classList.add("disabled");
   checkHistorique.checked = false;

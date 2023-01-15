@@ -3,8 +3,8 @@
 .container-cube-3d {
     perspective: 1000px;
     perspective-origin: 50% 50%;
-    height:auto;
- 
+    height: auto;
+
 }
 
 .container .cube {
@@ -13,7 +13,7 @@
     top: 50%;
     height: 200px;
     width: 200px;
-    transform-style: preserve-3d;    
+    transform-style: preserve-3d;
     transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
 }
 

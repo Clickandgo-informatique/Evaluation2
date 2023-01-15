@@ -2,162 +2,198 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet" />
-  <!-- Feuille de style personnalisée -->
-  <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet" />
+    <!-- Feuille de style personnalisée -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-  <title>Evaluation 2 - Jeu de dès</title>
+    <title>Evaluation 2 - Jeu de dès</title>
 </head>
 
 <body>
+    <!-- Surface Bureau -->
+    <div class="container-fluid bureau">
+        <div class="row p-2 d-flex justify-content-center">
 
-  <div class="row">
-    <!-- Barre navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning py-1 text-white">
-      <div class="container-fluid mx-3">
-        <h2>Jeu de dés à deux joueurs</h2>
-        <div>
-          <input type="checkbox" name="checkHistorique" class="checkHistorique" />
-          <label for="checkHistorique">Voir historique</label>
-        </div>
-      </div>
-    </nav>
-  </div>
+            <!-- Container scores -->
+            <div class="container-fluid  container-scores">
+                <div class="row d-flex ">
+                    <div class="col d-flex justify-content-around">
+                        <!-- Scores Joueur 1 -->
+                        <div class="container container-scores-joueur1 mb-1" id="joueur1">
+                            <div class="row">
+                                <div class="col mb-1">
+                                    <span class="titre-joueur1 text-Shadow text-center text-white p-2">Joueur 1</span>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col box-Shadow score-courant mx-1 py-1">
+                                        <h6 class="text-Shadow text-white text-center">Courant</h6>
+                                        <h4
+                                            class="score-courant text-Shadow text-white text-center score-courant-joueur1">
+                                            0</h4>
+                                    </div>
+                                    <div class="col box-Shadow score-total mx-1 py-1">
+                                        <h6 class="text-Shadow text-white text-center">Total</h6>
+                                        <h4
+                                            class="text-Shadow score-total score-total-joueur1 text-white text-center my-0">
+                                            0</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Fin scores Joueur 1 -->
 
-  <!-- Barre informative -->
-  <div class="row p-1 text-center bg-success text-white">
-    <div class="col-md-12">
-      <div id="barreInfo"></div>
-    </div>
-  </div>
-  <!-- Surface Bureau -->
-  <div class="row p-2">
-    <div class="d-flex col-md-12 bureau mx-auto">
-      <!-- Scores Joueur 1 -->
-      <div class="d-flex flex-column justify-content-around col-md-2 p-3 mx-3" id="joueur1">
-        <span class="joueur1 text-Shadow text-center text-white p-3 box-Shadow">Joueur 1</span>
+                        <!-- Scores Joueur 2 -->
+                        <div class="container container-scores-joueur2" id="joueur2">
+                            <div class="row">
+                                <div class="col mb-1">
+                                    <span class="titre-joueur2 text-Shadow text-center text-white p-2">Joueur
+                                        2</span>
+                                </div>
+                            </div>
 
-        <div class="d-flex p-3 flex-column box-Shadow score-total">
-          <h6 class="text-Shadow text-white text-center">Score total</h6>
-          <h4 class="text-Shadow score-total score-total-joueur1 text-white text-center my-0">0</h4>
-        </div>
-        <div class="d-flex p-3 flex-column box-Shadow score-courant">
-          <h6 class="text-Shadow text-white text-center">Score courant</h6>
-          <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur1">0</h4>
-        </div>
-      </div>
-      <!-- Tapis de jeu -->
-      <div class="col-md-8 tapis-jeu mx-auto mt-3">
-        <div class="container">
-
-          <!-- Cube-3d représentant le dé -->
-          <div class="col-md-12">
-          <div class="container-cube-3d">
-              <div class="cube" id="cube">
-                <div class="front">
-                  <span class="fas fa-circle"></span>
+                            <div class="row">
+                                <div class="col box-Shadow score-courant mx-1 py-1">
+                                    <h6 class="text-Shadow text-white text-center">Courant</h6>
+                                    <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur2">
+                                        0
+                                    </h4>
+                                </div>
+                                <div class="col p-2 flex-column box-Shadow score-total mx-1 py-1">
+                                    <h6 class="text-Shadow text-white text-center">Total</h6>
+                                    <h4 class="text-Shadow score-total score-total-joueur2 text-white text-center my-0">
+                                        0
+                                    </h4>
+                                </div>
+                            </div>
+                        </div><!-- Fin scores Joueur 2 -->
+                    </div>
                 </div>
-
-                <div class="back">
-                  <pre
-                    class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>     <span class="fas fa-circle"></span></pre>
-                  <br />
-                  <pre
-                    class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
-                </div>
-
-                <div class="top">
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                </div>
-
-                <div class="left">
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                </div>
-
-                <div class="right">
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                </div>
-
-                <div class="bottom">
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                  <span class="fas fa-circle"></span>
-                </div>
-              </div>
             </div>
-          </div>
+
+            <!-- Tapis de jeu -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 tapis-jeu mx-auto mt-3">
+
+                        <!-- Container-joueur-actif -->
+                        <div class="container container-joueur-actif">
+                            <div class="row">
+                                <div class="col-md-10 mx-auto">
+                                    <div class="joueurActif text-Shadow text-center">
+                                        <p class="text">Aucun joueur actif</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Fin container-joueur-actif -->
+
+                        <!-- Cube-3d représentant le dé -->
+                        <div class="col-md-12">
+                            <div class="container-cube-3d">
+                                <div class="cube" id="cube">
+                                    <div class="front">
+                                        <span class="fas fa-circle"></span>
+                                    </div>
+
+                                    <div class="back">
+                                        <pre
+                                            class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>     <span class="fas fa-circle"></span></pre>
+                                        <br />
+                                        <pre
+                                            class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+                                    </div>
+
+                                    <div class="top">
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                    </div>
+
+                                    <div class="left">
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                    </div>
+
+                                    <div class="right">
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                        <span class="fas fa-circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Barre informative -->
+                        <div class="container-fluid">
+                            <div class="row p-1 text-center text-white text-Shadow my-5">
+                                <div class="col-md-12">
+                                    <div id="barreInfo"></div>
+                                </div>
+                            </div>
+                        </div><!-- Fin barre informative -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- Fin tapis de jeu -->
+
+        <!-- Container boutons -->
+        <div class="container container-boutons">
+            <div class="row p-2">
+                <div class="col-xxl-12 d-flex justify-content-center p-2">
+
+                    <button type="button" class="btn btn-primary mx-1 box-Shadow left-icon-holder text-white m-1"
+                        id="btn-hold">
+                        <i class="fa fa-calculator text-white"></i>
+                        &nbsp;Ajouter au score global
+                    </button>
+                    <button type="button" class="btn btn-warning mx-1 box-Shadow left-icon-holder text-white m-1"
+                        id="btn-roll">
+                        <i class="fa fa-dice text-white"></i>
+                        &nbsp;Lancer le dé
+                    </button>
+                    <button type="button" class="btn btn-success mx-1 box-Shadow left-icon-holder text-white m-1"
+                        id="btn-new-game">
+                        <i class="fa fa-play"></i>
+                        &nbsp;Nouvelle partie
+                    </button>
+                </div>
+            </div>
+        </div><!-- Fin container boutons -->
+
+        <!-- Container historique -->
+        <div class="container">
+            <div class="col">
+                <div class="row d-flex justify-content-center">
+                    <input type="checkbox" name="checkHistorique" class="checkHistorique" />
+                    <label for="checkHistorique">Voir historique</label>
+                </div>
+            </div>
         </div>
-      </div><!-- Fin tapis de jeu -->
-      
-      
-      <!-- Scores Joueur 2 -->
-      <div class="d-flex flex-column justify-content-around col-md-2 p-3 mx-3" id="joueur2">
-        <span class="joueur2 text-Shadow text-center text-white p-3 box-Shadow">Joueur 2</span>
-        <div class="d-flex p-3 flex-column box-Shadow score-total">
-          <h6 class="text-white text-Shadow text-center">Score total</h6>
-          <h4 class="score-total score-total-joueur2 text-Shadow text-white text-center my-0">0</h4>
+
+        <!-- Barre historique partie -->
+        <div class="row p-1">
+            <div class="d-flex col-md-12 justify-content-center mx-auto">
+                <textarea class="historique"></textarea>
+            </div>
         </div>
-        <div class="d-flex p-3 flex-column box-Shadow score-courant">
-          <h6 class="text-white text-Shadow text-center">Score courant</h6>
-          <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur2">0</h4>
-        </div>
-      </div>
     </div>
-    
-    <div class="row">
-      <div class="col-md-10 mx-auto">
-        <div class="joueurActif text-Shadow text-center">Aucun joueur actif</div>
-      </div>
-    </div>
-    <!-- Container boutons -->
-    <div class="row p-2">
-      <div class="d-flex col-md-12 justify-content-center p-2">
-
-        <button type="button" class="btn btn-primary mx-1 box-Shadow left-icon-holder text-white" id="btn-hold">
-          <i class="fa fa-calculator text-white"></i>
-          &nbsp;Ajouter au score global
-        </button>
-
-        <button type="button" class="btn btn-warning mx-1 box-Shadow left-icon-holder text-white" id="btn-roll">
-          <i class="fa fa-dice text-white"></i>
-          &nbsp;Lancer le dé
-        </button>
-
-        <button type="button" class="btn btn-success mx-1 box-Shadow left-icon-holder text-white" id="btn-new-game">
-          <i class="fa fa-play"></i>
-          &nbsp;Nouvelle partie
-        </button>
-      </div>
-    </div>
-
-    <!-- Barre historique partie -->
-    <div class="row p-1">
-
-      <div class="d-flex col-md-12 justify-content-center mx-auto">
-        <textarea class="historique"></textarea>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
 </body>
 <script type="module" defer src="js/main.js"></script>
 
