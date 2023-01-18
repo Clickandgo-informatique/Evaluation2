@@ -1,10 +1,11 @@
 export default class Joueur {
+  
   constructor(numJoueur, scoreCourant, scoreGlobal) {
     this.numJoueur = numJoueur;
     this.scoreCourant = scoreCourant;
     this.scoreGlobal = scoreGlobal;    
-  }
-
+  }  
+  
   getScoreGlobal() {
     return this.scoreGlobal;
   }

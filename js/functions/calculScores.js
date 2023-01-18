@@ -1,4 +1,6 @@
-import { resultatTirage } from "./tirages.js";
+import {
+  resultatTirage
+} from "./tirages.js";
 
 import {
   divScoreCourantJ1,
@@ -11,7 +13,11 @@ import {
   divJoueurActif,
 } from "../constants.js";
 
-import { j1, j2,emphase } from "../main.js";
+import {
+  j1,
+  j2,
+  emphase
+} from "../main.js";
 
 //historique de la partie
 export const historique = [];
@@ -22,6 +28,8 @@ var scoreCourantJ2 = 0;
 var scoreTotalJ1 = 0;
 var scoreTotalJ2 = 0;
 var messageHistorique = "";
+
+import * as modals from "../constants-modals.js"
 
 //Calcul et affichage du score provisoire
 export const remplirScoreCourant = (joueurActif) => {
@@ -38,8 +46,8 @@ export const remplirScoreCourant = (joueurActif) => {
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     joueurActif.setNumJoueur(2);
-    divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`; 
-    emphase()   
+    divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
+    emphase()
 
     return joueurActif;
   }
@@ -85,7 +93,7 @@ export const remplirScoreCourant = (joueurActif) => {
 };
 
 export const afficherHistorique = () => {
- 
+
   //On inverse le tableau d'historique
   const rows = historique.reverse().map((row) => {
     return `<p>${row}</p>`;
@@ -116,7 +124,9 @@ export const calculScoresTotaux = (joueurActif) => {
   }
   //Si joueur 1 obtient 100 points il gagne
   if (joueurActif.getNumJoueur() === 1 && calculJ1 === 100) {
-    alert("Le joueur 1 a gagné la partie");
+    myModal.show()
+    modals.titre_modal_fin_partie
+    modals.modal_afficher_vainqueur(numjoueur)
     btnHold.disabled = true;
     btnRoll.disabled = true;
   }
@@ -137,8 +147,11 @@ export const calculScoresTotaux = (joueurActif) => {
     divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     return joueurActif;
   }
+  //Si le joueur 2 obtient 100 points il gagne
   if (joueurActif.getNumJoueur() === 2 && calculJ2 === 100) {
-    alert("Le joueur 2 a gagné la partie");
+    myModal.show()
+    modals.titre_modal_fin_partie
+    modals.modal_afficher_vainqueur(numjoueur)
     btnHold.disabled = true;
     btnRoll.disabled = true;
   }
