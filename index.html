@@ -23,13 +23,12 @@
     <!-- Surface Bureau -->
     <div class="container-fluid bureau">
         <div class="row p-2 d-flex justify-content-center">
-
             <!-- Container scores -->
             <div class="container-fluid  container-scores">
-                <div class="row d-flex ">
-                    <div class="col d-flex justify-content-around">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
                         <!-- Scores Joueur 1 -->
-                        <div class="container container-scores-joueur1 mb-1" id="joueur1">
+                        <div class="container container-scores-joueur1 p-1" id="joueur1">
                             <div class="row">
                                 <div class="col mb-1">
                                     <span class="titre-joueur1 text-Shadow text-center text-white p-2">Joueur 1</span>
@@ -54,26 +53,29 @@
                         </div><!-- Fin scores Joueur 1 -->
 
                         <!-- Scores Joueur 2 -->
-                        <div class="container container-scores-joueur2" id="joueur2">
+                        <div class="container container-scores-joueur2 p-1" id="joueur2">
                             <div class="row">
                                 <div class="col mb-1">
                                     <span class="titre-joueur2 text-Shadow text-center text-white p-2">Joueur
                                         2</span>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col box-Shadow score-courant mx-1 py-1">
-                                    <h6 class="text-Shadow text-white text-center">Courant</h6>
-                                    <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur2">
-                                        0
-                                    </h4>
-                                </div>
-                                <div class="col p-2 flex-column box-Shadow score-total mx-1 py-1">
-                                    <h6 class="text-Shadow text-white text-center">Total</h6>
-                                    <h4 class="text-Shadow score-total score-total-joueur2 text-white text-center my-0">
-                                        0
-                                    </h4>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col box-Shadow score-courant mx-1 py-1">
+                                        <h6 class="text-Shadow text-white text-center">Courant</h6>
+                                        <h4
+                                            class="score-courant text-Shadow text-white text-center score-courant-joueur2">
+                                            0
+                                        </h4>
+                                    </div>
+                                    <div class="col  box-Shadow score-total mx-1 py-1">
+                                        <h6 class="text-Shadow text-white text-center">Total</h6>
+                                        <h4
+                                            class="text-Shadow score-total score-total-joueur2 text-white text-center my-0">
+                                            0
+                                        </h4>
+                                    </div>
                                 </div>
                             </div>
                         </div><!-- Fin scores Joueur 2 -->
@@ -142,7 +144,7 @@
                             </div>
                         </div>
                         <!-- Barre informative -->
-                        <div class="container-fluid">
+                        <div class="container-fluid barreInfo">
                             <div class="row p-1 text-center text-white text-Shadow my-5">
                                 <div class="col-md-12">
                                     <div id="barreInfo"></div>

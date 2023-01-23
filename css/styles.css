@@ -27,13 +27,15 @@ body {
     padding: 1px;
     text-align: left;
 }
+
 .bureau {
-    max-width: 700px;
-    min-width:350px;
-    max-height: 100vh;    
+    max-width: 1200px;
+    min-width: 350px;
+    max-height: 100vh;
 }
 
-.titre-joueur1,.titre-joueur2 {
+.titre-joueur1,
+.titre-joueur2 {
     font-size: 16px;
 }
 
@@ -43,57 +45,49 @@ body {
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
-    text-align: center;    
+    text-align: center;
 }
-.container-scores{
-    margin:0;
-    padding:0;
-    max-width:600px;
-       background-color: rgb(0, 86, 0);
-       box-shadow: var(--box-shadow);
-       border-radius: var(--border-radius-large);
-       border: 3px solid darkolivegreen;
+
+.container-scores {
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
 }
 
 .container-scores-joueur1,
 .container-scores-joueur2 {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
+    box-shadow: var(--box-shadow);
 }
 
 #joueur1,
 #joueur2 {
-    max-width: 200px;
+    max-width: 195px;
 }
-
 .tapis-jeu {
     background-color: rgb(0, 86, 0);
-    border: 4px solid darkolivegreen;
-    border-radius: 25px;   
-    transition: 1s linear ease-in-out;
-    max-width: 600px;
-    min-height: 400px;
-    box-shadow: var(--box-shadow);    
-}
-
-.selection {
-    animation: color-me-in 1s;  
+    border: 4px solid rgb(95, 126, 41);
     border-radius: 25px;
-    border:3px solid darkolivegreen;
-    padding: 7px 20px; 
-    opacity:1; 
+    transition: 1s linear ease-in-out;
+    max-width: 700px;
+    min-height: 400px;
+    box-shadow: var(--box-shadow);
 }
-
+.selection {
+    animation: color-me-in 1s;
+    border-radius: 25px;
+    border: 1px solid darkgray;   
+    opacity: 1;
+}
 .deselection {
     opacity: 50%;
 }
-
 .text-Shadow {
     text-shadow: 1px 1px 2px black,
         0 0 1em darkgray,
         0 0 0.2em darkgray;
 }
-
 .box-Shadow {
     box-shadow: 5px 6px 10px 0 rgba(0, 0, 0, .4);
 
@@ -105,8 +99,6 @@ body {
     font-weight: 1000;
     background-color: rgb(131, 128, 128);
     border-radius: 5px;
-    /* opacity:80%; */
-
 }
 
 .score-courant {
@@ -123,4 +115,7 @@ body {
     height: 25px;
     color: black;
     font-size: 15px;    
+}
+.barreInfo p{
+    margin-bottom: 3px;
 }

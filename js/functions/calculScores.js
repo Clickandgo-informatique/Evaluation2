@@ -75,7 +75,7 @@ export const remplirScoreCourant = (joueurActif) => {
     scoreCourantJ1 = currentJ1.reduce((a, b) => a + b, 0);
     divScoreCourantJ1.textContent = scoreCourantJ1;
     j1.setScoreCourant(scoreCourantJ1);
-    messageHistorique = `Le joueur 1 a tiré un ${resultatTirage}. Score provisoire = ${j1.getScoreCourant()}/100.`;
+    messageHistorique = `<p>Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j1.getScoreCourant()}/100.</p>`;
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     btnHold.disabled = false;
@@ -85,7 +85,7 @@ export const remplirScoreCourant = (joueurActif) => {
     scoreCourantJ2 = currentJ2.reduce((a, b) => a + b, 0);
     j2.setScoreCourant(scoreCourantJ2);
     divScoreCourantJ2.textContent = scoreCourantJ2;
-    messageHistorique = `Le joueur 2 a tiré un ${resultatTirage}. Score provisoire = ${j2.getScoreCourant()}/100.`;
+    messageHistorique = `<p>Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j1.getScoreCourant()}/100.</p>`;;
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     btnHold.disabled = false;
@@ -96,7 +96,7 @@ export const afficherHistorique = () => {
 
   //On inverse le tableau d'historique
   const rows = historique.reverse().map((row) => {
-    return `<p>${row}</p>`;
+    return `${row}`;
   });
   divHistorique.innerHTML = rows.join("");
 };
@@ -111,7 +111,7 @@ export const calculScoresTotaux = (joueurActif) => {
     divScoreTotalJ1.textContent = scoreTotalJ1;
     divScoreCourantJ1.textContent = 0;
     currentJ1.length = 0;
-    messageHistorique = `Le joueur 1 a tiré un ${resultatTirage}. Score total = ${j1.getScoreCourant()}/100.`;
+    messageHistorique = `<p>Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score total = ${j1.getScoreCourant()}/100.</p>`;
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     btnHold.disabled = true;
@@ -119,7 +119,7 @@ export const calculScoresTotaux = (joueurActif) => {
     //Changement de joueur
     joueurActif.setNumJoueur(2);
     emphase()
-    divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
+    divJoueurActif.textContent = `<p>Joueur ${joueurActif.getNumJoueur()} est le joueur actif<p>`;
     return joueurActif;
   }
   //Si joueur 1 obtient 100 points il gagne
@@ -136,7 +136,7 @@ export const calculScoresTotaux = (joueurActif) => {
     divScoreTotalJ2.textContent = scoreTotalJ2;
     divScoreCourantJ2.textContent = 0;
     currentJ2.length = 0;
-    messageHistorique = `Le joueur 2 a tiré un ${resultatTirage}. Score total = ${j2.getScoreCourant()}/100.`;
+    messageHistorique = `<p>Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score total = ${j2.getScoreCourant()}/100.</p>`;
     barreInfo.innerHTML = messageHistorique;
     historique.push(messageHistorique);
     btnHold.disabled = true;

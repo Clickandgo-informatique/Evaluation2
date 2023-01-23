@@ -3,7 +3,6 @@
     .container-cube-3d {
         transform: scale(32%);
     }
-
     .joueurActif,.barreInfo{
         font-size:8px;
     }

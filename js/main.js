@@ -40,7 +40,7 @@ const footerModal = document.querySelector(".modal-footer")
 
 //Au démarrage de la page
 window.onload = () => {
-  barreInfo.innerHTML = `Appuyer sur le bouton "Nouvelle partie" pour commencer`;
+  barreInfo.innerHTML = `<p>Appuyer sur le bouton "Nouvelle partie" (touche "n") pour commencer</p>`;
   btnHold.classList.add("disabled");
   btnRoll.classList.add("disabled");
   checkHistorique.checked = false;
@@ -54,8 +54,9 @@ window.onload = () => {
 //Détermine qui est le premier joueur par aléatoire
 function premierJoueur() {
   joueurActif.setNumJoueur(Math.floor(Math.random() * 2) + 1);
-  barreInfo.innerHTML = `<h4>Le joueur ${joueurActif.getNumJoueur()} commence la partie</h4>`;
-  divJoueurActif.textContent = `Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
+  barreInfo.innerHTML = `<p>Le joueur ${joueurActif.getNumJoueur()} commence la partie.</p>
+   <p>Appuyer sur le bouton " Lancer le dé " (barre espace)</p>`;
+  divJoueurActif.innerHTML = `<p>Joueur ${joueurActif.getNumJoueur()} est le joueur actif</p>`;
   return joueurActif;
 }
 const initialiser = () => {
@@ -76,19 +77,18 @@ const initialiser = () => {
 };
 
 btnNewGame.addEventListener("click", () => {
-  //Si il existe une partie en cours, demande de confirmation par modale
-  if (j1.getScoreCourant() > 0 || j2.getScoreCourant() > 0) {
-
-    myModal.show()
-    titreModal.textContent = modals.titre_modal_confirmation
-    contenuModal.innerHTML = modals.contenu_modal_confirmation
-    footerModal.innerHTML = modals.footer_modal_confirmation
-  } else {
-    newGame()
-  }
+newGame()
 });
+
 const newGame = () => {  
-  
+    //Si il existe une partie en cours, demande de confirmation par modale
+    if (j1.getScoreCourant() > 0 || j2.getScoreCourant() > 0) {
+
+      myModal.show()
+      titreModal.textContent = modals.titre_modal_confirmation
+      contenuModal.innerHTML = modals.contenu_modal_confirmation
+      footerModal.innerHTML = modals.footer_modal_confirmation
+    }
   //Nouvelle partie
   initialiser();
   btnRoll.classList.remove("disabled");
@@ -97,13 +97,8 @@ const newGame = () => {
 }
 
 //Lancement du dé
-btnRoll.addEventListener("click", () => {
-  btnHold.classList.remove("disabled");
-  tirage();
-  setTimeout(() => {
-    remplirScoreCourant(joueurActif);
-  }, 1400)
-
+btnRoll.addEventListener("click", (e) => {
+  lancerDe()
   //Si l'option est sélectionnée l'historique de
   // la partie est affiché
   if (checkHistorique.checked === true) {
@@ -114,11 +109,23 @@ btnRoll.addEventListener("click", () => {
   }
 });
 
+const lancerDe=()=>{
+    btnHold.classList.remove("disabled");
+    tirage();
+    setTimeout(() => {
+      remplirScoreCourant(joueurActif);
+    }, 1400)
+}
+
 //Ajouter score courant au global du joueur actif
 btnHold.addEventListener("click", () => {
+ajouterAuScoreTotal()
+});
+
+const ajouterAuScoreTotal = () => {
   calculScoresTotaux(joueurActif);
   afficherHistorique();
-});
+}
 
 divJoueurActif.addEventListener('animationend', () => {
   divJoueurActif.classList.remove("animationColor")
@@ -138,5 +145,24 @@ export const emphase = () => {
     joueur2.classList.add('selection')
     joueur2.classList.remove('deselection')
   }
-
 }
+//Ecoute du clavier
+document.addEventListener('keyup',(e)=>{
+  console.log(e.code)
+switch(e.code){
+  case "KeyN": 
+    newGame()
+    break
+  case "Space":
+  lancerDe()
+    break
+  case "KeyH":
+    console.log(historique)
+    break
+  case "Enter":
+   ajouterAuScoreTotal()
+    break
+  default:
+    return 
+}
+})
