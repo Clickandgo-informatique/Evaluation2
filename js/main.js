@@ -1,10 +1,9 @@
 import Joueur from "./classes/Joueur.js";
 import JoueurActif from "./classes/JoueurActif.js";
+import {tirage} from "./functions/tirages.js";
+import{timer,t}from "./functions/chrono.js"
 import {
-  tirage
-} from "./functions/tirages.js";
-import {
-  angleArray,
+  divChrono,
   btnHold,
   btnNewGame,
   btnRoll,
@@ -62,7 +61,7 @@ function premierJoueur() {
 const initialiser = () => {
   //Obtenir un premier joueur de façon aléatoire
   premierJoueur();
-  //Mise à zéro des champs et tableaux
+  //Mise à zéro des champs, chrono et tableaux
   currentJ1.length = 0;
   currentJ2.length = 0;
   historique.length = 0;
@@ -71,7 +70,10 @@ const initialiser = () => {
   divScoreTotalJ1.textContent = 0;
   divScoreCourantJ2.textContent = 0;
   divScoreTotalJ2.textContent = 0;
-
+  //remise à zéro chrono
+  timer() 
+  divChrono.textContent="00:00:00"
+  console.log("t =",t)
   emphase();
   afficherHistorique();
 };
@@ -81,9 +83,9 @@ newGame()
 });
 
 const newGame = () => {  
-    //Si il existe une partie en cours, demande de confirmation par modale
-    if (j1.getScoreCourant() > 0 || j2.getScoreCourant() > 0) {
-
+    //Si il existe une partie en cours, demande de confirmation par modale et pause du chrono
+    if (j1.getScoreCourant() > 0 || j2.getScoreCourant() > 0) {     
+      
       myModal.show()
       titreModal.textContent = modals.titre_modal_confirmation
       contenuModal.innerHTML = modals.contenu_modal_confirmation

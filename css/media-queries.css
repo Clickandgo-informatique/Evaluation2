@@ -1,7 +1,7 @@
 /*Extra-small*/
 @media screen and (min-width:0px) {
     .container-cube-3d {
-        transform: scale(32%);
+        transform: scale(40%);
     }
     .joueurActif,.barreInfo{
         font-size:8px;
@@ -23,7 +23,7 @@
 /*Small*/
 @media screen and (min-width:576px){
     .container-cube-3d {
-        transform: scale(37%);
+        transform: scale(45%);
     }
     .score-courant{
         font-size: 10px;
@@ -38,19 +38,19 @@
 /*Large*/
 @media screen and (min-width:992px) {
     .container-cube-3d {
-        transform: scale(45%);
+        transform: scale(40%);
     }
 }
 
 /* Extra large*/
 @media screen and (min-width:1200px) {
     .container-cube-3d {
-        transform: scale(60%);
+        transform: scale(40%);
     }
 }
 /*Extra extra-large*/
 @media screen and (min-width:1400px) {
     .container-cube-3d {
-        transform: scale(60%);
+        transform: scale(40%);
     }
 }

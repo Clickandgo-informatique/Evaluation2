@@ -10,13 +10,9 @@ export const contenu_modal_bienvenue = `
 (L'IA se charge de permuter entre joueurs)</p>`
 
 export const titre_modal_bienvenue = "Jeu de dé à deux joueurs"
-
 export const titre_modal_fin_partie = "Fin de partie"
-
 export const titre_modal_confirmation = "Demande de confirmation"
-
 export const contenu_modal_confirmation = "Une partie est en cours, êtes vous sûr de vouloir quitter cette partie ?"
-
 export const footer_modal_confirmation =
     `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button> 
 <button type="button" id="btnNewGameFromModal" class="btn btn-secondary" data-bs-dismiss="modal">Oui, je suis d'accord</button>

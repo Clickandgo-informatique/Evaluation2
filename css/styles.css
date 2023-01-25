@@ -8,6 +8,10 @@ body {
     background-size: cover;
     font-family: 'lato', sans-serif;
 }
+.divChrono{
+    color:white;
+    font-size: 24px;
+}
 
 .joueurActif {
     color: white;

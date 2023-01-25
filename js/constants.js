@@ -12,6 +12,7 @@ export const divScoreTotalJ2 = document.querySelector('.score-total-joueur2')
 export const divHistorique = document.querySelector('.historique')
 export const checkHistorique = document.querySelector('.checkHistorique')
 export const divJoueurActif=document.querySelector('.joueurActif')
+export const divChrono = document.querySelector('.divChrono')
 
 export const angleArray = [
     [0, 0, 0],
