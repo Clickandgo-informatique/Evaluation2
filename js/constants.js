@@ -9,8 +9,7 @@ export const divScoreCourantJ1 = document.querySelector('.score-courant-joueur1'
 export const divScoreTotalJ1 = document.querySelector('.score-total-joueur1')
 export const divScoreCourantJ2 = document.querySelector('.score-courant-joueur2')
 export const divScoreTotalJ2 = document.querySelector('.score-total-joueur2')
-export const divHistorique = document.querySelector('.historique')
-export const checkHistorique = document.querySelector('.checkHistorique')
+export const txtHistorique = document.querySelector('.txtHistorique')
 export const divJoueurActif=document.querySelector('.joueurActif')
 export const divChrono = document.querySelector('.divChrono')
 

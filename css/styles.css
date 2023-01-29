@@ -38,6 +38,9 @@ body {
     max-height: 100vh;
 }
 
+.modal p{
+    margin-bottom: 3px;
+}
 .titre-joueur1,
 .titre-joueur2 {
     font-size: 16px;

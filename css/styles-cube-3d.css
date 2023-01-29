@@ -3,13 +3,11 @@
 .container-cube-3d {
     perspective: 1000px;
     perspective-origin: 50% 50%;
-    height: auto;
-
 }
 
 .container .cube {
     position: relative;
-    left: 40%;
+    left: 50%;
     top: 50%;
     height: 200px;
     width: 200px;

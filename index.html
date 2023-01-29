@@ -51,13 +51,17 @@
                                 </div>
                             </div>
                         </div><!-- Fin scores Joueur 1 -->
-<!-- Container chrono -->
+                        <!-- Container chrono -->
                         <div class="container">
                             <div class="row">
-                                <div class="col d-flex justify-content-center align-items-center p-5">
+                                <div class="col-md  d-flex flex-column justify-content-center align-items-center p-5">
                                     <h1 class="divChrono text-Shadow">
                                         <time>00:00:00</time>
                                     </h1>
+                                    <!-- lien vers modale historique -->
+                                    <div class="lien-historique">
+                                        <a href="#">Voir historique</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -110,8 +114,9 @@
                         </div><!-- Fin container-joueur-actif -->
 
                         <!-- Cube-3d représentant le dé -->
-                        <div class="col-md-12">
-                            <div class="container-cube-3d">
+                        <div class="container-cube-3d">
+                          
+                                <div class="col-md-12">
                                 <div class="cube" id="cube">
                                     <div class="front">
                                         <span class="fas fa-circle"></span>
@@ -189,24 +194,8 @@
                 </div>
             </div>
         </div><!-- Fin container boutons -->
-
-        <!-- Container historique -->
-        <div class="container">
-            <div class="col">
-                <div class="row d-flex justify-content-center">
-                    <input type="checkbox" name="checkHistorique" class="checkHistorique" />
-                    <label for="checkHistorique">Voir historique</label>
-                </div>
-            </div>
-        </div>
-
-        <!-- Barre historique partie -->
-        <div class="row p-1">
-            <div class="d-flex col-md-12 justify-content-center mx-auto">
-                <textarea class="historique"></textarea>
-            </div>
-        </div>
     </div>
+
     <!-- Modal -->
     <div class="modal fade modal-lg" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
