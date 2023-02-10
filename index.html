@@ -51,11 +51,11 @@
                                 </div>
                             </div>
                         </div><!-- Fin scores Joueur 1 -->
-                        <!-- Container chrono -->
+                        <!-- Container timer -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-md  d-flex flex-column justify-content-center align-items-center p-5">
-                                    <h1 class="divChrono text-Shadow">
+                                    <h1 class="divTimer text-Shadow" id="divTimer">
                                         <time>00:00:00</time>
                                     </h1>
                                     <!-- lien vers modale historique -->
@@ -191,6 +191,11 @@
                         <i class="fa fa-play"></i>
                         &nbsp;Nouvelle partie
                     </button>
+                    <button type="button" class="btn btn-danger mx-1 box-Shadow left-icon-holder text-white m-1"
+                        id="btn-dismiss-game">
+                        <i class="fa fa-circle-xmark"></i>
+                        &nbsp;Abandon
+                    </button>
                 </div>
             </div>
         </div><!-- Fin container boutons -->
@@ -223,5 +228,4 @@
     crossorigin="anonymous"></script>
 
 <script type="module" defer src="./js/main.js"></script>
-
 </html>

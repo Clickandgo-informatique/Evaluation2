@@ -2,28 +2,62 @@
     animation: color-me-in 1.5s;
 }
 
-.animationScores{
-    animation:scale-scores 1s;
+.animationScores {
+    animation: scale-scores 1s;
 }
+
 @keyframes color-me-in {
 
     0% {
         transform: scale(75%);
-        
     }
 
-    100% {        
-        transform: scale(100%);     
-        opacity: 1;        
+    100% {
+        transform: scale(100%);
+        opacity: 1;
     }
 }
+
 @keyframes scale-scores {
 
     0% {
-        transform: scale(25%);        
+        transform: scale(25%);
     }
 
-    100% {        
-        transform: scale(100%);        
+    100% {
+        transform: scale(100%);
+    }
+}
+
+.animationBureau {
+    animation: deplacement-bureau 3s;
+}
+
+@keyframes deplacement-bureau {
+    0% {
+        transform: translateY(800px);
+        transform: translateX(-100px);
+    }
+
+    /* 25% {
+        transform: translateX(-600px);
+        transform: translateY(-600px);
+    }*/
+
+    50% {
+        /* transform: translateX(200px); */
+        transform: translateY(20px);
+    }
+
+    /* 75% {
+        transform: translateX(-250px);
+        transform: translateY(-250px);
+        
+    } */
+
+    100% {
+        transform: translateX(0px);
+        transform: translateY(0px);
+
     }
 }

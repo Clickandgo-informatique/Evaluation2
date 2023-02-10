@@ -11,7 +11,8 @@ export const divScoreCourantJ2 = document.querySelector('.score-courant-joueur2'
 export const divScoreTotalJ2 = document.querySelector('.score-total-joueur2')
 export const txtHistorique = document.querySelector('.txtHistorique')
 export const divJoueurActif=document.querySelector('.joueurActif')
-export const divChrono = document.querySelector('.divChrono')
+export const newGameFromModal = document.querySelector('#btnNewGameFromModal')
+export const btnDismmissGame = document.querySelector('#btn-dismiss-game')
 
 export const angleArray = [
     [0, 0, 0],

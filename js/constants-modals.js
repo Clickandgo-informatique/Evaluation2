@@ -18,7 +18,7 @@ export const titre_modal_confirmation = "Demande de confirmation"
 export const contenu_modal_confirmation = "Une partie est en cours, êtes vous sûr de vouloir quitter cette partie ?"
 export const footer_modal_confirmation =
     `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button> 
-<button type="button" id="btnNewGameFromModal" class="btn btn-secondary" data-bs-dismiss="modal">Oui, je suis d'accord</button>
+<button type="button" id="btnNewGameFromModal" class="btn btn-secondary">Oui, je suis d'accord</button>
 `
 export const titre_modal_historique="Historique de la partie"
 export const footer_modal_historique=`<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>`

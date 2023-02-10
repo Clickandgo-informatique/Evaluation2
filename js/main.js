@@ -1,10 +1,12 @@
 import Joueur from "./classes/Joueur.js";
 import JoueurActif from "./classes/JoueurActif.js";
 import { tirage } from "./functions/tirages.js";
-import { timer, t } from "./functions/chrono.js"
+import Timer  from "./classes/Timer.js"
 
-import {
-  divChrono,
+//Instanciation chrono
+const t1 = new Timer("divTimer")
+
+import {  
   btnHold,
   btnNewGame,
   btnRoll,
@@ -14,7 +16,8 @@ import {
   divScoreTotalJ2,
   divJoueurActif,
   joueur1,
-  joueur2
+  joueur2,
+  btnDismmissGame, 
 } from "./constants.js";
 import {
   calculScoresTotaux,
@@ -27,6 +30,7 @@ import {
 import * as modals from "./constants-modals.js"
 
 const lienHistorique = document.querySelector('.lien-historique')
+const tapisJeu=document.querySelector('.bureau')
 
 //Initialisation des variables des 2 joueurs
 export const j1 = new Joueur(1, 0, 0);
@@ -44,10 +48,12 @@ window.onload = () => {
   barreInfo.innerHTML = `<p>Appuyer sur le bouton "Nouvelle partie" (touche "n") pour commencer</p>`;
   btnHold.classList.add("disabled");
   btnRoll.classList.add("disabled");
+  tapisJeu.classList.add('animationBureau')
+  console.log(tapisJeu)
 
-  myModal.toggle()
-  titreModal.textContent = modals.titre_modal_bienvenue
-  contenuModal.innerHTML = modals.contenu_modal_bienvenue
+  // myModal.toggle()
+  // titreModal.textContent = modals.titre_modal_bienvenue
+  // contenuModal.innerHTML = modals.contenu_modal_bienvenue
 
 };
 
@@ -71,12 +77,15 @@ const initialiser = () => {
   divScoreTotalJ1.textContent = 0;
   divScoreCourantJ2.textContent = 0;
   divScoreTotalJ2.textContent = 0;
+
   //remise à zéro chrono
-  clearTimeout(t)
-  divChrono.textContent = "00:00:00"
-  timer()
+  t1.reset()
+  t1.start()
+
   emphase();
   afficherHistorique();
+  //Animer le tapis de jeu
+
 };
 
 btnNewGame.addEventListener("click", () => {
@@ -86,17 +95,26 @@ btnNewGame.addEventListener("click", () => {
 const newGame = () => {
   //Si il existe une partie en cours, demande de confirmation par modale
   if (j1.getScoreCourant() > 0 || j2.getScoreCourant() > 0) {
-
+    //Pause du chrono
+    t1.stop()
     myModal.show()
     titreModal.textContent = modals.titre_modal_confirmation
     contenuModal.innerHTML = modals.contenu_modal_confirmation
-    footerModal.innerHTML = modals.footer_modal_confirmation
+    footerModal.innerHTML = modals.footer_modal_confirmation  
+    const btnCloseModal = document.getElementById("btnNewGameFromModal")
+    console.log(btnCloseModal) 
+    btnCloseModal.addEventListener('click',()=>{
+      t1.stop()
+      t1.reset()
+      myModal.hide()
+      initialiser()
+    })
   }
+
   //Nouvelle partie
   initialiser();
   btnRoll.classList.remove("disabled");
   divJoueurActif.classList.add("animationColor");
-
 }
 
 //Lancement du dé
@@ -121,6 +139,7 @@ const ajouterAuScoreTotal = () => {
   calculScoresTotaux(joueurActif);
 }
 
+//Annulation et fin d'animation div joueur actif
 divJoueurActif.addEventListener('animationend', () => {
   divJoueurActif.classList.remove("animationColor")
 })
@@ -138,7 +157,7 @@ lienHistorique.addEventListener('click', () => {
   footerModal.innerHTML = modals.footer_modal_historique
 })
 
-//Emphase visuelle sur les scores pour signaler le joueur actif
+//Emphase visuelle css sur les scores pour signaler le joueur actif
 export const emphase = () => {
 
   if (joueurActif.getNumJoueur() === 1) {
@@ -153,6 +172,25 @@ export const emphase = () => {
     joueur2.classList.remove('deselection')
   }
 }
+
+//Abandonner partie
+btnDismmissGame.addEventListener('click',()=>{
+  //Mise à zéro des champs, chrono et tableaux
+  currentJ1.length = 0;
+  currentJ2.length = 0;
+  historique.length = 0;
+
+  divScoreCourantJ1.textContent = 0;
+  divScoreTotalJ1.textContent = 0;
+  divScoreCourantJ2.textContent = 0;
+  divScoreTotalJ2.textContent = 0;
+
+  //remise à zéro chrono
+  t1.reset()
+
+  
+})
+
 //Ecoute du clavier
 document.addEventListener('keyup', (e) => {
   console.log(e.code)
@@ -173,3 +211,4 @@ document.addEventListener('keyup', (e) => {
       return
   }
 })
+
