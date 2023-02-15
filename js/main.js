@@ -17,7 +17,9 @@ import {
   divJoueurActif,
   joueur1,
   joueur2,
-  btnDismmissGame, 
+  btnDismmissGame,
+  contScoreCourantJ1,
+  contScoreCourantJ2
 } from "./constants.js";
 import {
   calculScoresTotaux,
@@ -30,7 +32,7 @@ import {
 import * as modals from "./constants-modals.js"
 
 const lienHistorique = document.querySelector('.lien-historique')
-const tapisJeu=document.querySelector('.bureau')
+export const tapisJeu=document.querySelector('.tapis-jeu')
 
 //Initialisation des variables des 2 joueurs
 export const j1 = new Joueur(1, 0, 0);
@@ -48,12 +50,11 @@ window.onload = () => {
   barreInfo.innerHTML = `<p>Appuyer sur le bouton "Nouvelle partie" (touche "n") pour commencer</p>`;
   btnHold.classList.add("disabled");
   btnRoll.classList.add("disabled");
-  tapisJeu.classList.add('animationBureau')
-  console.log(tapisJeu)
-
-  // myModal.toggle()
-  // titreModal.textContent = modals.titre_modal_bienvenue
-  // contenuModal.innerHTML = modals.contenu_modal_bienvenue
+setTimeout(()=>{
+  myModal.toggle()
+  titreModal.textContent = modals.titre_modal_bienvenue
+  contenuModal.innerHTML = modals.contenu_modal_bienvenue
+},2000)
 
 };
 
@@ -128,6 +129,9 @@ const lancerDe = () => {
   setTimeout(() => {
     remplirScoreCourant(joueurActif);
   }, 1400)
+  contScoreCourantJ1.classList.remove('animationScores')
+  contScoreCourantJ2.classList.remove('animationScores')
+  tapisJeu.classList.remove('tapisJeuRouge')
 }
 
 //Ajouter score courant au global du joueur actif
@@ -146,7 +150,9 @@ divJoueurActif.addEventListener('animationend', () => {
 
 //Affiche l'historique de la partie dans une modale
 lienHistorique.addEventListener('click', () => {
+afficherModaleHistorique()})
 
+const afficherModaleHistorique=()=>{
   myModal.show()
   titreModal.textContent = modals.titre_modal_historique
   if (historique.length == 0) {
@@ -155,7 +161,8 @@ lienHistorique.addEventListener('click', () => {
     contenuModal.innerHTML = `${afficherHistorique()}`
   }
   footerModal.innerHTML = modals.footer_modal_historique
-})
+}
+
 
 //Emphase visuelle css sur les scores pour signaler le joueur actif
 export const emphase = () => {
@@ -187,7 +194,6 @@ btnDismmissGame.addEventListener('click',()=>{
 
   //remise à zéro chrono
   t1.reset()
-
   
 })
 
@@ -202,7 +208,7 @@ document.addEventListener('keyup', (e) => {
       lancerDe()
       break
     case "KeyH":
-      console.log(historique)
+      afficherModaleHistorique()
       break
     case "Enter", "ArrowUp":
       ajouterAuScoreTotal()

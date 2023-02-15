@@ -30,34 +30,42 @@
 }
 
 .animationBureau {
-    animation: deplacement-bureau 3s;
+    animation: deplacement-bureau 2s;
 }
 
 @keyframes deplacement-bureau {
     0% {
-        transform: translateY(800px);
-        transform: translateX(-100px);
+       transform:translateY(-800px);
     }
-
-    /* 25% {
-        transform: translateX(-600px);
-        transform: translateY(-600px);
-    }*/
+/* 
+    25% {
+        transform: translateX(-600px) translateY(-600px);
+    }
 
     50% {
-        /* transform: translateX(200px); */
-        transform: translateY(20px);
+        transform: translateX(-450px) translateY(-450px);
+
     }
 
-    /* 75% {
-        transform: translateX(-250px);
-        transform: translateY(-250px);
-        
+    75% {
+        transform: translateX(-250px) translateY(-250px);
     } */
 
     100% {
-        transform: translateX(0px);
         transform: translateY(0px);
+    }
+}
 
+.fadeOut {
+    animation: fadeOut 1.5s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }

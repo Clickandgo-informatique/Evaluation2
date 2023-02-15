@@ -9,11 +9,14 @@ import {
   btnHold,
   btnRoll,
   divJoueurActif,
+  contScoreCourantJ1,
+  contScoreCourantJ2
 } from "../constants.js";
 import {
   j1,
   j2,
-  emphase
+  emphase,
+  tapisJeu
 } from "../main.js";
 
 //historique de la partie et variables de scores
@@ -31,13 +34,14 @@ import * as modals from "../constants-modals.js"
 
 //Calcul et affichage du score provisoire
 export const remplirScoreCourant = (joueurActif) => {
-  //Si l'un des joueurs tire un "1" alors il perd son score courant
+  //Si l'un des joueurs tire un "1" alors il perd son score courant et passe son tour
   if (joueurActif.getNumJoueur() === 1 && resultatTirage === 1) {
     j1.setScoreCourant(0);
 
     //vidage tableau de score courant
     currentJ1.length = 0;
     divScoreCourantJ1.textContent = 0;
+    contScoreCourantJ1.classList.add('animationScores')
     msgHistorique = `<p>- Le joueur 1 cède son tour avec un score total de ${j1.getScoreGlobal()} points, doit obtenir ${100 - j1.getScoreGlobal()
       } pour gagner.</p>`;
     barreInfo.innerHTML = msgHistorique;
@@ -45,6 +49,7 @@ export const remplirScoreCourant = (joueurActif) => {
     joueurActif.setNumJoueur(2);
     divJoueurActif.textContent = `- Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     emphase()
+    tapisJeu.classList.add('tapisJeuRouge') 
 
     return joueurActif;
   }
@@ -54,6 +59,7 @@ export const remplirScoreCourant = (joueurActif) => {
     //vidage tableau de score courant
     currentJ2.length = 0;
     divScoreCourantJ2.textContent = 0;
+    contScoreCourantJ2.classList.add('animationScores')
     msgHistorique = `<p>- Le joueur 2 cède son tour avec un total provisoire de ${j2.getScoreGlobal()} points, doit obtenir ${100 - j2.getScoreGlobal()} points pour gagner.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
@@ -61,6 +67,7 @@ export const remplirScoreCourant = (joueurActif) => {
     emphase()
     divJoueurActif.textContent = `- Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     divJoueurActif.classList.add("animationScale");
+    tapisJeu.classList.add('tapisJeuRouge')        
 
     return joueurActif;
   }
@@ -69,6 +76,7 @@ export const remplirScoreCourant = (joueurActif) => {
     currentJ1.push(resultatTirage);
     scoreCourantJ1 = currentJ1.reduce((a, b) => a + b, 0);
     divScoreCourantJ1.textContent = scoreCourantJ1;
+    contScoreCourantJ1.classList.add('animationScores')
     j1.setScoreCourant(scoreCourantJ1);
     msgHistorique = `<p>- Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j1.getScoreCourant()}.</p>`;
     barreInfo.innerHTML = msgHistorique;
@@ -80,6 +88,7 @@ export const remplirScoreCourant = (joueurActif) => {
     scoreCourantJ2 = currentJ2.reduce((a, b) => a + b, 0);
     j2.setScoreCourant(scoreCourantJ2);
     divScoreCourantJ2.textContent = scoreCourantJ2;
+    contScoreCourantJ2.classList.add('animationScores')
     msgHistorique = `<p>- Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j2.getScoreCourant()}.</p>`;;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
