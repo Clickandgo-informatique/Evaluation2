@@ -4,7 +4,7 @@ import { tirage } from "./functions/tirages.js";
 import Timer  from "./classes/Timer.js"
 
 //Instanciation chrono
-const t1 = new Timer("divTimer")
+export const t1 = new Timer("divTimer")
 
 import {  
   btnHold,
@@ -55,6 +55,7 @@ setTimeout(()=>{
   titreModal.textContent = modals.titre_modal_bienvenue
   contenuModal.innerHTML = modals.contenu_modal_bienvenue
 },2000)
+btnNewGame.classList.add('pulse')
 
 };
 
@@ -85,7 +86,8 @@ const initialiser = () => {
 
   emphase();
   afficherHistorique();
-  //Animer le tapis de jeu
+btnNewGame.classList.remove('pulse')
+btnRoll.classList.add('pulse')
 
 };
 
@@ -131,7 +133,7 @@ const lancerDe = () => {
   }, 1400)
   contScoreCourantJ1.classList.remove('animationScores')
   contScoreCourantJ2.classList.remove('animationScores')
-  tapisJeu.classList.remove('tapisJeuRouge')
+  tapisJeu.classList.remove('tapisJeuRouge') 
 }
 
 //Ajouter score courant au global du joueur actif
@@ -194,7 +196,13 @@ btnDismmissGame.addEventListener('click',()=>{
 
   //remise à zéro chrono
   t1.reset()
-  
+
+  //Arrêt/démarrage animation des boutons
+  btnRoll.classList.remove('pulse')
+  btnNewGame.classList.add('pulse')
+  btnHold.classList.remove('shake')
+  btnHold.classList.add("disabled");
+  btnRoll.classList.add("disabled");
 })
 
 //Ecoute du clavier

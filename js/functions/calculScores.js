@@ -13,6 +13,7 @@ import {
   contScoreCourantJ2
 } from "../constants.js";
 import {
+  t1,
   j1,
   j2,
   emphase,
@@ -36,13 +37,13 @@ import * as modals from "../constants-modals.js"
 export const remplirScoreCourant = (joueurActif) => {
   //Si l'un des joueurs tire un "1" alors il perd son score courant et passe son tour
   if (joueurActif.getNumJoueur() === 1 && resultatTirage === 1) {
+   
     j1.setScoreCourant(0);
-
     //vidage tableau de score courant
     currentJ1.length = 0;
     divScoreCourantJ1.textContent = 0;
     contScoreCourantJ1.classList.add('animationScores')
-    msgHistorique = `<p>- Le joueur 1 cède son tour avec un score total de ${j1.getScoreGlobal()} points, doit obtenir ${100 - j1.getScoreGlobal()
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 1 cède son tour avec un score total de ${j1.getScoreGlobal()} points, doit obtenir ${100 - j1.getScoreGlobal()
       } pour gagner.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
@@ -50,17 +51,19 @@ export const remplirScoreCourant = (joueurActif) => {
     divJoueurActif.textContent = `- Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     emphase()
     tapisJeu.classList.add('tapisJeuRouge') 
+    btnHold.classList.remove('shake')
 
     return joueurActif;
   }
 
   if (joueurActif.getNumJoueur() === 2 && resultatTirage === 1) {
+   
     j2.setScoreCourant(0);
     //vidage tableau de score courant
     currentJ2.length = 0;
     divScoreCourantJ2.textContent = 0;
     contScoreCourantJ2.classList.add('animationScores')
-    msgHistorique = `<p>- Le joueur 2 cède son tour avec un total provisoire de ${j2.getScoreGlobal()} points, doit obtenir ${100 - j2.getScoreGlobal()} points pour gagner.</p>`;
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 2 cède son tour avec un total provisoire de ${j2.getScoreGlobal()} points, doit obtenir ${100 - j2.getScoreGlobal()} points pour gagner.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
     joueurActif.setNumJoueur(1);
@@ -68,7 +71,7 @@ export const remplirScoreCourant = (joueurActif) => {
     divJoueurActif.textContent = `- Joueur ${joueurActif.getNumJoueur()} est le joueur actif`;
     divJoueurActif.classList.add("animationScale");
     tapisJeu.classList.add('tapisJeuRouge')        
-
+    btnHold.classList.remove('shake')
     return joueurActif;
   }
 
@@ -78,10 +81,11 @@ export const remplirScoreCourant = (joueurActif) => {
     divScoreCourantJ1.textContent = scoreCourantJ1;
     contScoreCourantJ1.classList.add('animationScores')
     j1.setScoreCourant(scoreCourantJ1);
-    msgHistorique = `<p>- Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j1.getScoreCourant()}.</p>`;
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j1.getScoreCourant()}.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
     btnHold.disabled = false;
+    btnHold.classList.add('shake')
   }
   if (joueurActif.getNumJoueur() === 2 && resultatTirage > 1) {
     currentJ2.push(resultatTirage);
@@ -89,10 +93,11 @@ export const remplirScoreCourant = (joueurActif) => {
     j2.setScoreCourant(scoreCourantJ2);
     divScoreCourantJ2.textContent = scoreCourantJ2;
     contScoreCourantJ2.classList.add('animationScores')
-    msgHistorique = `<p>- Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j2.getScoreCourant()}.</p>`;;
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j2.getScoreCourant()}.</p>`;;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
     btnHold.disabled = false;
+    btnHold.classList.add('shake')
   }
 };
 
@@ -109,10 +114,11 @@ export const calculScoresTotaux = (joueurActif) => {
     divScoreTotalJ1.textContent = scoreTotalJ1;
     divScoreCourantJ1.textContent = 0;
     currentJ1.length = 0;
-    msgHistorique = `<p>- Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score total = ${j1.getScoreGlobal()}/100.</p>`;
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 1 a tiré un ${resultatTirage}.</p><p>Score total = ${j1.getScoreGlobal()}/100.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
     btnHold.disabled = true;
+    btnHold.classList.remove('shake')
 
     //Changement de joueur / passage de tour
     joueurActif.setNumJoueur(2);
@@ -136,10 +142,11 @@ export const calculScoresTotaux = (joueurActif) => {
     divScoreTotalJ2.textContent = scoreTotalJ2;
     divScoreCourantJ2.textContent = 0;
     currentJ2.length = 0;
-    msgHistorique = `<p>- Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score total = ${j2.getScoreGlobal()}/100.</p>`;
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score total = ${j2.getScoreGlobal()}/100.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
     btnHold.disabled = true;
+    btnHold.classList.remove('shake')
 
     //Changement de joueur 
     joueurActif.setNumJoueur(1);

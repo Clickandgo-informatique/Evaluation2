@@ -8,6 +8,7 @@ import {
 
 export const animerCube = () => {
   cube.style.animation = "animate 1.4s linear";
+ 
   cube.style.transform =
     "rotateX(" +
     angleArray[resultatTirage][0] +

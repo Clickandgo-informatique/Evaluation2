@@ -51,6 +51,11 @@ export default class Timer {
         this.value = 0;
         this.update();
     }
+
+    getCurrentTimer(){
+        this.currentTimer=this.display.textContent
+        return this.currentTimer;
+    }
 }
 
 

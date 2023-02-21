@@ -34,24 +34,11 @@
 }
 
 @keyframes deplacement-bureau {
-    0% {
-       transform:translateY(-800px);
-    }
-/* 
-    25% {
-        transform: translateX(-600px) translateY(-600px);
+    from {
+       transform:translateY(-700px);
     }
 
-    50% {
-        transform: translateX(-450px) translateY(-450px);
-
-    }
-
-    75% {
-        transform: translateX(-250px) translateY(-250px);
-    } */
-
-    100% {
+    to{
         transform: translateY(0px);
     }
 }
@@ -62,10 +49,35 @@
 
 @keyframes fadeOut {
     from {
-        opacity: 1;
+        opacity: 0;
     }
 
     to {
-        opacity: 0;
+        opacity: 1;
+    }
+}
+
+.pulse{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    from{
+        transform:scale(95%);
+    }
+    to{
+        transform:scale(105%);
+    }
+}
+.shake{
+    animation:shake 0.3s alternate infinite;
+}
+
+@keyframes shake{
+    from{
+        transform:translateX(-2px);
+    }
+    to{
+        transform:translate(2px);
     }
 }
