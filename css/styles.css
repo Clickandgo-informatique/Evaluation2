@@ -4,9 +4,14 @@
 @import "/css/variables.css";
 
 body {
-    background-image: url("../img/simon-berger-JH_R66BihvA-unsplash.jpg");
+    background-image: url("../img/wood.jpg");
     background-size: cover;
     font-family: 'lato', sans-serif;
+
+}
+
+.btn{
+    font-weight: 600;
 }
 
 .divTimer {
@@ -87,7 +92,7 @@ body {
     border-radius: 25px;
     transition: 1s linear ease-in-out;
     max-width: 700px;
-    min-height: 400px;
+    min-height: 450px;
     box-shadow: var(--box-shadow);
 }
 

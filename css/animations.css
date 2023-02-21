@@ -59,6 +59,7 @@
 
 .pulse{
     animation:pulse 2s infinite;
+    border: 2px solid yellow;
 }
 
 @keyframes pulse{
