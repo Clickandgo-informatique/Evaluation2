@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,9 +23,9 @@
     <div class="container-fluid bureau animationBureau">
         <div class="row p-2 d-flex justify-content-center">
             <!-- Container scores -->
-            <div class="container-fluid  container-scores">
+            <div class="container container-scores">
                 <div class="row">
-                    <div class="col d-flex justify-content-around">
+                    <div class="col-xxl-12 d-flex justify-content-center p-2">
                         <!-- Scores Joueur 1 -->
                         <div class="container container-scores-joueur1 p-1" id="joueur1">
                             <div class="row">
@@ -38,33 +37,19 @@
                                 <div class="row">
                                     <div class="col box-Shadow score-courant cont-score-courantJ1 mx-1 py-1">
                                         <h6 class="text-Shadow text-white text-center">Courant</h6>
-                                        <h4
-                                            class="score-courant text-Shadow text-white text-center score-courant-joueur1">
+                                        <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur1">
                                             0</h4>
                                     </div>
                                     <div class="col box-Shadow score-total mx-1 py-1">
                                         <h6 class="text-Shadow text-white text-center">Total</h6>
-                                        <h4
-                                            class="text-Shadow score-total score-total-joueur1 text-white text-center my-0">
+                                        <h4 class="text-Shadow score-total score-total-joueur1 text-white text-center my-0">
                                             0</h4>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- Fin scores Joueur 1 -->
                         <!-- Container timer -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md  d-flex flex-column justify-content-center align-items-center p-5">
-                                    <h1 class="divTimer text-Shadow" id="divTimer">
-                                        <time>00:00:00</time>
-                                    </h1>
-                                    <!-- lien vers modale historique -->
-                                    <div class="lien-historique">
-                                        <a href="#">Voir historique</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+     
 
                         <!-- Scores Joueur 2 -->
                         <div class="container container-scores-joueur2 p-1" id="joueur2">
@@ -78,15 +63,13 @@
                                 <div class="row">
                                     <div class="col box-Shadow score-courant cont-score-courantJ2 mx-1 py-1">
                                         <h6 class="text-Shadow text-white text-center">Courant</h6>
-                                        <h4
-                                            class="score-courant text-Shadow text-white text-center score-courant-joueur2">
+                                        <h4 class="score-courant text-Shadow text-white text-center score-courant-joueur2">
                                             0
                                         </h4>
                                     </div>
                                     <div class="col  box-Shadow score-total mx-1 py-1">
                                         <h6 class="text-Shadow text-white text-center">Total</h6>
-                                        <h4
-                                            class="text-Shadow score-total score-total-joueur2 text-white text-center my-0">
+                                        <h4 class="text-Shadow score-total score-total-joueur2 text-white text-center my-0">
                                             0
                                         </h4>
                                     </div>
@@ -123,11 +106,9 @@
                                     </div>
 
                                     <div class="back">
-                                        <pre
-                                            class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>     <span class="fas fa-circle"></span></pre>
+                                        <pre class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>     <span class="fas fa-circle"></span></pre>
                                         <br />
-                                        <pre
-                                            class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+                                        <pre class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
                                     </div>
 
                                     <div class="top">
@@ -176,23 +157,19 @@
             <div class="row p-2">
                 <div class="col-xxl-12 d-flex justify-content-center p-2">
 
-                    <button type="button" class="btn btn-primary mx-1 box-Shadow left-icon-holder text-white text-bold m-1"
-                        id="btn-hold">
+                    <button type="button" class="btn btn-primary mx-1 box-Shadow left-icon-holder text-white text-bold m-1" id="btn-hold">
                         <i class="fa fa-calculator text-white"></i>
                         &nbsp;Ajouter au score global
                     </button>
-                    <button type="button" class="btn btn-warning mx-1 box-Shadow left-icon-holder text-white m-1"
-                        id="btn-roll">
+                    <button type="button" class="btn btn-warning mx-1 box-Shadow left-icon-holder text-white m-1" id="btn-roll">
                         <i class="fa fa-dice text-white"></i>
                         &nbsp;Lancer le dé
                     </button>
-                    <button type="button" class="btn btn-success mx-1 box-Shadow left-icon-holder text-white m-1"
-                        id="btn-new-game">
+                    <button type="button" class="btn btn-success mx-1 box-Shadow left-icon-holder text-white m-1" id="btn-new-game">
                         <i class="fa fa-play"></i>
                         &nbsp;Nouvelle partie
                     </button>
-                    <button type="button" class="btn btn-danger mx-1 box-Shadow left-icon-holder text-white m-1"
-                        id="btn-dismiss-game">
+                    <button type="button" class="btn btn-danger mx-1 box-Shadow left-icon-holder text-white m-1" id="btn-dismiss-game">
                         <i class="fa fa-circle-xmark"></i>
                         &nbsp;Abandon
                     </button>
@@ -201,7 +178,7 @@
         </div><!-- Fin container boutons -->
     </div>
     <div class="signature">
-        <span class="text-Shadow">Code by Emmanuel Leveque for STUDI &nbsp;&nbsp;&copy;&nbsp;Copyrights 2023        
+        <span class="text-Shadow">Code by Emmanuel Leveque for STUDI &nbsp;&nbsp;&copy;&nbsp;Copyrights 2023
     </div>
 
     <!-- Modal -->
@@ -210,8 +187,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="titre_modal" id="titre-modal"></h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p class="lead"></p>
@@ -224,12 +200,8 @@
         </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
 <script type="module" defer src="./js/main.js"></script>
 
