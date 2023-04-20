@@ -23,14 +23,14 @@
     <div class="container-fluid bureau animationBureau">
         <div class="row p-1 d-flex justify-content-center">
             <!-- Container scores -->
-            <?= include("container-scores.php") ?>
+            <?= include("./includes/container-scores.php") ?>
 
             <!-- Tapis de jeu -->
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 tapis-jeu mx-auto mt-1">
                         <!-- Container timer -->
-                        <?= include("timer.php") ?>
+                        <?= include("./includes/timer.php") ?>
 
                         <!-- Container-joueur-actif -->
                         <div class="container container-joueur-actif">
@@ -44,7 +44,7 @@
                         </div><!-- Fin container-joueur-actif -->
 
                         <!-- Cube-3d représentant le dé -->
-                        <?= include("cube3d.php") ?>
+                        <?= include("./includes/cube3d.php") ?>
 
                         <!-- Barre informative -->
                         <div class="container-fluid barreInfo">
@@ -60,7 +60,7 @@
         </div><!-- Fin tapis de jeu -->
 
         <!-- Container boutons -->
-        <?= include("container-boutons.php") ?>
+        <?= include("./includes/container-boutons.php") ?>
        
         <!-- Copyrights -->
         <div class="container">
@@ -73,7 +73,7 @@
     </div><!-- Fin container bureau -->
 
     <!-- Modale -->
-    <?= include("modal.php") ?>
+    <?= include("./includes/modal.php") ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>

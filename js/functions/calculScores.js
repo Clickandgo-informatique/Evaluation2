@@ -39,6 +39,7 @@ export const remplirScoreCourant = (joueurActif) => {
   if (joueurActif.getNumJoueur() === 1 && resultatTirage === 1) {
    
     j1.setScoreCourant(0);
+
     //vidage tableau de score courant
     currentJ1.length = 0;
     divScoreCourantJ1.textContent = 0;
@@ -76,6 +77,7 @@ export const remplirScoreCourant = (joueurActif) => {
   }
 
   if (joueurActif.getNumJoueur() === 1 && resultatTirage > 1) {
+    
     currentJ1.push(resultatTirage);
     scoreCourantJ1 = currentJ1.reduce((a, b) => a + b, 0);
     divScoreCourantJ1.textContent = scoreCourantJ1;
@@ -88,6 +90,7 @@ export const remplirScoreCourant = (joueurActif) => {
     btnHold.classList.add('shake')
   }
   if (joueurActif.getNumJoueur() === 2 && resultatTirage > 1) {
+    
     currentJ2.push(resultatTirage);
     scoreCourantJ2 = currentJ2.reduce((a, b) => a + b, 0);
     j2.setScoreCourant(scoreCourantJ2);
@@ -109,6 +112,7 @@ export const calculScoresTotaux = (joueurActif) => {
 
   //Calcul score total du joueur 1 tant qu'inférieur à 100
   if (joueurActif.getNumJoueur() === 1 && calculJ1 < 100) {
+   
     scoreTotalJ1 += scoreCourantJ1;
     j1.setScoreGlobal=scoreTotalJ1
     divScoreTotalJ1.textContent = scoreTotalJ1;
@@ -126,8 +130,10 @@ export const calculScoresTotaux = (joueurActif) => {
     divJoueurActif.innerHTML = `<p>- Joueur ${joueurActif.getNumJoueur()} est le joueur actif<p>`;
     return joueurActif;
   }
+
   //Si joueur 1 obtient 100 points il gagne, affichage modale victoire
   if (joueurActif.getNumJoueur() === 1 && calculJ1 === 100) {
+    
     myModal.show()
     modals.titre_modal_fin_partie
     modals.modal_afficher_vainqueur(numjoueur)
@@ -137,6 +143,7 @@ export const calculScoresTotaux = (joueurActif) => {
 
   //Calcul score total du joueur 2 tant qu'inférieur à 100
   if (joueurActif.getNumJoueur() === 2 && calculJ2 < 100) {
+    
     scoreTotalJ2 += scoreCourantJ2;
     j2.setScoreGlobal=scoreTotalJ2
     divScoreTotalJ2.textContent = scoreTotalJ2;
@@ -157,6 +164,7 @@ export const calculScoresTotaux = (joueurActif) => {
   //Si le joueur 2 obtient 100 points il gagne,
   // affichage modale victoire
   if (joueurActif.getNumJoueur() === 2 && calculJ2 === 100) {
+    
     myModal.show()
     modals.titre_modal_fin_partie
     modals.modal_afficher_vainqueur(numjoueur)
