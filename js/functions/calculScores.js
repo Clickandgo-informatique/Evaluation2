@@ -93,7 +93,7 @@ export const remplirScoreCourant = (joueurActif) => {
     j2.setScoreCourant(scoreCourantJ2);
     divScoreCourantJ2.textContent = scoreCourantJ2;
     contScoreCourantJ2.classList.add('animationScores')
-    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j2.getScoreCourant()}.</p>`;;
+    msgHistorique = `<p>- [${t1.getCurrentTimer()}] => Le joueur 2 a tiré un ${resultatTirage}.</p><p>Score provisoire = ${j2.getScoreCourant()}.</p>`;
     barreInfo.innerHTML = msgHistorique;
     historique.push(msgHistorique);
     btnHold.disabled = false;

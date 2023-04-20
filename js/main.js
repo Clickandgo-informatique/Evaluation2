@@ -1,12 +1,12 @@
 import Joueur from "./classes/Joueur.js";
 import JoueurActif from "./classes/JoueurActif.js";
 import { tirage } from "./functions/tirages.js";
-import Timer  from "./classes/Timer.js"
+import Timer from "./classes/Timer.js"
 
 //Instanciation chrono
 export const t1 = new Timer("divTimer")
 
-import {  
+import {
   btnHold,
   btnNewGame,
   btnRoll,
@@ -32,7 +32,7 @@ import {
 import * as modals from "./constants-modals.js"
 
 const lienHistorique = document.querySelector('.lien-historique')
-export const tapisJeu=document.querySelector('.tapis-jeu')
+export const tapisJeu = document.querySelector('.tapis-jeu')
 
 //Initialisation des variables des 2 joueurs
 export const j1 = new Joueur(1, 0, 0);
@@ -50,12 +50,13 @@ window.onload = () => {
   barreInfo.innerHTML = `<p>Appuyer sur le bouton "Nouvelle partie" (touche "n") pour commencer</p>`;
   btnHold.classList.add("disabled");
   btnRoll.classList.add("disabled");
-setTimeout(()=>{
-  myModal.toggle()
-  titreModal.textContent = modals.titre_modal_bienvenue
-  contenuModal.innerHTML = modals.contenu_modal_bienvenue
-},2000)
-btnNewGame.classList.add('pulse')
+  
+  setTimeout(() => {
+    myModal.toggle()
+    titreModal.textContent = modals.titre_modal_bienvenue
+    contenuModal.innerHTML = modals.contenu_modal_bienvenue
+  }, 2000)
+  btnNewGame.classList.add('pulse')
 
 };
 
@@ -86,8 +87,8 @@ const initialiser = () => {
 
   emphase();
   afficherHistorique();
-btnNewGame.classList.remove('pulse')
-btnRoll.classList.add('pulse')
+  btnNewGame.classList.remove('pulse')
+  btnRoll.classList.add('pulse')
 
 };
 
@@ -103,10 +104,10 @@ const newGame = () => {
     myModal.show()
     titreModal.textContent = modals.titre_modal_confirmation
     contenuModal.innerHTML = modals.contenu_modal_confirmation
-    footerModal.innerHTML = modals.footer_modal_confirmation  
+    footerModal.innerHTML = modals.footer_modal_confirmation
     const btnCloseModal = document.getElementById("btnNewGameFromModal")
-    console.log(btnCloseModal) 
-    btnCloseModal.addEventListener('click',()=>{
+    console.log(btnCloseModal)
+    btnCloseModal.addEventListener('click', () => {
       t1.stop()
       t1.reset()
       myModal.hide()
@@ -133,7 +134,7 @@ const lancerDe = () => {
   }, 1400)
   contScoreCourantJ1.classList.remove('animationScores')
   contScoreCourantJ2.classList.remove('animationScores')
-  tapisJeu.classList.remove('tapisJeuRouge') 
+  tapisJeu.classList.remove('tapisJeuRouge')
 }
 
 //Ajouter score courant au global du joueur actif
@@ -152,9 +153,10 @@ divJoueurActif.addEventListener('animationend', () => {
 
 //Affiche l'historique de la partie dans une modale
 lienHistorique.addEventListener('click', () => {
-afficherModaleHistorique()})
+  afficherModaleHistorique()
+})
 
-const afficherModaleHistorique=()=>{
+const afficherModaleHistorique = () => {
   myModal.show()
   titreModal.textContent = modals.titre_modal_historique
   if (historique.length == 0) {
@@ -183,7 +185,7 @@ export const emphase = () => {
 }
 
 //Abandonner partie
-btnDismmissGame.addEventListener('click',()=>{
+btnDismmissGame.addEventListener('click', () => {
   //Mise à zéro des champs, chrono et tableaux
   currentJ1.length = 0;
   currentJ2.length = 0;
@@ -207,7 +209,6 @@ btnDismmissGame.addEventListener('click',()=>{
 
 //Ecoute du clavier
 document.addEventListener('keyup', (e) => {
-  console.log(e.code)
   switch (e.code) {
     case "KeyN":
       newGame()

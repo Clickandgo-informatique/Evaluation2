@@ -5,6 +5,7 @@ export const contenu_modal_bienvenue = `
 <br>- Deux joueurs doivent lancer le dé pour essayer de cumuler un maximum de points en décidant à quel moment ajouter le stock de points provisoires ("score courant") au stock de points "total" et tenter au plus vite d'obtenir le score final de 100 points.
 <br>- Le joueur actif peut lancer autant de fois qu'il le désire tant qu'il ne tire pas un "1" ou qu'il n'ajoute pas son score courant à son score total ce qui provoque automatiquement un passage de tour et changement de joueur actif...
 (L'IA se charge de permuter entre joueurs)</p>
+<br>
 <h4><strong><u>Touches clavier :</u></strong></h4>
 <p><b>[N]</b> = Nouvelle partie.</p>
 <p><b>[Barre espace]</b> = Lancement du dé joueur actif.</p>
