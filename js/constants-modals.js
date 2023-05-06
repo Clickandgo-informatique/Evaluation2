@@ -10,8 +10,7 @@ export const contenu_modal_bienvenue = `
 <p><b>[N]</b> = Nouvelle partie.</p>
 <p><b>[Barre espace]</b> = Lancement du dé joueur actif.</p>
 <p><b>[Entrée]</b> ou <b>[Flèche vers le haut]</b> = Ajouter le score courant au global.</p>
-<p><b>[H]</b> = Voir historique partie.</p>
-`
+<p><b>[H]</b> = Voir historique partie.</p>`
 
 export const titre_modal_bienvenue = "Jeu de dé à deux joueurs"
 export const titre_modal_fin_partie = "Fin de partie"

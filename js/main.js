@@ -106,7 +106,7 @@ const newGame = () => {
     contenuModal.innerHTML = modals.contenu_modal_confirmation
     footerModal.innerHTML = modals.footer_modal_confirmation
     const btnCloseModal = document.getElementById("btnNewGameFromModal")
-    console.log(btnCloseModal)
+    
     btnCloseModal.addEventListener('click', () => {
       t1.stop()
       t1.reset()

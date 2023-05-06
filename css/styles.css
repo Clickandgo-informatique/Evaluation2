@@ -10,7 +10,7 @@ body {
 
 }
 
-.btn{
+.btn {
     font-weight: 600;
 }
 
@@ -20,7 +20,7 @@ body {
     padding: 5px;
     margin: 5px;
     letter-spacing: 5px;
-    font-weight: normal;    
+    font-weight: normal;
 }
 
 .joueurActif {
@@ -90,7 +90,7 @@ body {
     transition: 1s linear ease-in-out;
     max-width: 700px;
     min-height: 550px;
-    height:auto;
+    height: auto;
     box-shadow: var(--box-shadow);
 }
 
@@ -147,7 +147,7 @@ body {
 
 /*Perte de tour : coloration du tapis de jeu en rouge*/
 .tapisJeuRouge {
-    background: rgb(255, 84, 112);
+    background: rgb(255, 21, 60);
     animation: fadeOut 1.5s;
 }
 

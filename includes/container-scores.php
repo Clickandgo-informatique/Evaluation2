@@ -1,8 +1,8 @@
 <div class="container-fluid container-scores">
     <div class="row text-center">
         <div class="col-xxl-12 d-flex p-1 justify-content-between">
-            
-        <!-- Scores Joueur 1 -->
+
+            <!-- Scores Joueur 1 -->
             <div class="container container-scores-joueur1 p-1" id="joueur1">
                 <div class="row">
                     <div class="col mb-1">
@@ -25,6 +25,9 @@
                 </div>
             </div><!-- Fin scores Joueur 1 -->
 
+            <!-- Container timer -->
+            <?php include("./includes/timer.php") ?>
+            
             <!-- Scores Joueur 2 -->
             <div class="container container-scores-joueur2 p-1" id="joueur2">
                 <div class="row">
