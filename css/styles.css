@@ -28,7 +28,7 @@ body {
     padding: 5px 10px;
     margin: 10px 0;
     width: auto;
-    font-size: 24px;
+    font-size: 12px;
 }
 
 .historique {
@@ -136,13 +136,13 @@ body {
 .barreInfo {
     height: 25px;
     color: black;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .barreInfo p {
     margin-bottom: 3px;
     font-style: italic;
-    font-size: 20px;
+    font-size: 12px;
 }
 
 /*Perte de tour : coloration du tapis de jeu en rouge*/

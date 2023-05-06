@@ -25,9 +25,19 @@
                 </div>
             </div><!-- Fin scores Joueur 1 -->
 
-            <!-- Container timer -->
-            <?php include("./includes/timer.php") ?>
-            
+            <!-- Container infos central -->
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <!-- Container timer -->
+                        <?php include("./includes/timer.php") ?>
+
+                        <!-- Container joueur actif -->
+                        <?php include("./includes/container-joueur-actif.php") ?>
+                    </div>
+                </div>
+            </div>
+
             <!-- Scores Joueur 2 -->
             <div class="container container-scores-joueur2 p-1" id="joueur2">
                 <div class="row">
