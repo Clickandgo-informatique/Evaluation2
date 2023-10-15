@@ -7,7 +7,10 @@ body {
     background-image: url("../img/wood.jpg");
     background-size: cover;
     font-family: 'lato', sans-serif;
-
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
@@ -45,11 +48,13 @@ body {
 .bureau {
     max-width: 1200px;
     min-width: 350px;
-    max-height: 100vh;
+    max-height: 100vh;   
 }
-
+.contenu-modal{
+    margin:20px;
+}
 .modal p {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
 }
 
 .titre-joueur1,

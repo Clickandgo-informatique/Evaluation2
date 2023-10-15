@@ -1,5 +1,8 @@
 /*Extra-small*/
 @media screen and (min-width:0px) {
+    body{
+        align-items: start;
+    }
     .container-cube-3d {
         transform: scale(40%);
     }
@@ -22,6 +25,9 @@
 
 /*Small*/
 @media screen and (min-width:576px){
+    body{
+        align-items: start;
+    }
     .container-cube-3d {
         transform: scale(45%);
     }
@@ -31,6 +37,9 @@
 }
 /*Medium*/
 @media screen and (min-width:768px) {
+    body{
+        align-items: start;
+    }
     .container-cube-3d {
         transform: scale(40%);
     }

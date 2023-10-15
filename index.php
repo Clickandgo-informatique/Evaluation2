@@ -21,15 +21,14 @@
 
 <body>
     <!-- Surface Bureau -->
-    <div class="container-fluid bureau animationBureau">
+    <div class="container-fluid justify-content-center bureau animationBureau">
         <div class="row p-1 d-flex justify-content-center">
-      
             <!-- Tapis de jeu -->
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 tapis-jeu mx-auto mt-1">
                         <!-- Container scores -->
-                        <?php include("./includes/container-scores.php") ?>      
+                        <?php include("./includes/container-scores.php") ?>
 
                         <!-- Cube-3d représentant le dé -->
                         <?php include("./includes/cube3d.php") ?>
